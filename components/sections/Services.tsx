@@ -1,0 +1,172 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Magnetic from "@/components/animations/Magnetic";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const technologies = [
+  {
+    name: "Tailwind CSS",
+    desc: "Creating responsive, modern, and clean layouts quickly using utility-first styling.",
+    icon: (
+      <svg className="w-12 h-12 text-sky-400" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8 1.2.3 2.1 1.2 3 2.1 1.6 1.6 3.4 3.5 6.8 3.5 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.9-.2-1.5-.9-2.2-1.5-.9-.9-1.8-1.8-3.6-2.1-.5-.1-1-.2-1.5-.2h-.5zM6 12.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8 1.2.3 2.1 1.2 3 2.1 1.6 1.6 3.4 3.5 6.8 3.5 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.9-.2-1.5-.9-2.2-1.5-.9-.9-1.8-1.8-3.6-2.1-.5-.1-1-.2-1.5-.2h-.5z" />
+      </svg>
+    ),
+  },
+  {
+    name: "JavaScript",
+    desc: "Writing efficient, modern, and optimized code for both frontend and backend logic.",
+    icon: <div className="bg-[#F7DF1E] text-black font-bold text-3xl w-12 h-12 flex items-center justify-center rounded">JS</div>,
+  },
+  {
+    name: "React",
+    desc: "Building fast, interactive, and component-based UIs with clean state management.",
+    icon: (
+      <svg className="w-12 h-12 text-cyan-400 animate-[spin_10s_linear_infinite]" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" fill="currentColor" r="10" />
+        <ellipse cx="50" cy="50" fill="none" rx="40" ry="15" stroke="currentColor" strokeWidth="4" />
+        <ellipse cx="50" cy="50" fill="none" rx="40" ry="15" stroke="currentColor" strokeWidth="4" transform="rotate(60 50 50)" />
+        <ellipse cx="50" cy="50" fill="none" rx="40" ry="15" stroke="currentColor" strokeWidth="4" transform="rotate(120 50 50)" />
+      </svg>
+    ),
+  },
+  {
+    name: "Node.js",
+    desc: "Developing scalable backend logic and high-performance server-side applications.",
+    icon: <div className="border-4 border-blue-500 text-blue-500 font-bold text-xl px-2 py-1 rounded-lg">US</div>,
+  },
+  {
+    name: "MongoDB",
+    desc: "Managing NoSQL databases with flexible schemas for high-performance data storage.",
+    icon: (
+      <svg className="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <path d="M4 7v10c0 1.66 3.58 3 8 3s8-1.34 8-3V7M4 7c0 1.66 3.58 3 8 3s8-1.34 8-3M4 7c0-1.66 3.58-3 8-3s8 1.34 8 3m-16 5c0 1.66 3.58 3 8 3s8-1.34 8-3" />
+      </svg>
+    ),
+  },
+  {
+    name: "HTML",
+    desc: "Creating clean, well-structured page layouts with semantic markup for better accessibility and SEO.",
+    icon: <div className="border-4 border-blue-400 text-blue-400 font-black text-2xl w-12 h-12 flex items-center justify-center rounded">5</div>,
+  },
+];
+
+const Stats = [
+  { value: 120, suffix: "+", label: "Projects Completed" },
+  { value: 95, suffix: "%", label: "Success Rate" },
+  { value: 10, suffix: "+", label: "Years Experience" },
+];
+
+export default function Services() {
+  const containerRef = useRef<HTMLElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    ScrollTrigger.refresh();
+    const ctx = gsap.context(() => {
+
+      // Staggered Tech Cards Entrance
+     gsap.from(".tech-card", {
+      opacity: 0,
+      y: 40,
+      stagger: 0.1,
+      duration: 1,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 85%", // একটু নিচে নামিয়ে দিলাম যাতে তাড়াতাড়ি ট্রিগার হয়
+        toggleActions: "play none none none", // শুধু একবার প্লে হবে
+        once: true,
+        },
+      });
+
+      // Animated Stats Counting
+      const statsElements = statsRef.current?.querySelectorAll(".stat-value");
+      statsElements?.forEach((el, i) => {
+        const target = Stats[i].value;
+        gsap.to(el, {
+          innerText: target,
+          duration: 2.5,
+          snap: { innerText: 1 },
+          scrollTrigger: {
+            trigger: statsRef.current,
+            start: "top 85%",
+          },
+        });
+      });
+    }, containerRef);
+    window.addEventListener("load", () => ScrollTrigger.refresh());
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section ref={containerRef} id="services" className="py-32 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto font-hanken">
+      {/* Section Header */}
+      <header className="text-center mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-portfolioAccent font-black uppercase tracking-[0.4em] text-xs mb-6"
+        >
+          Capabilities
+        </motion.div>
+        <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-8">
+          Skills & <span className="text-glow-purple italic text-brand-purple">Technologies</span>
+        </h2>
+        <p className="text-gray-400 max-w-2xl mx-auto text-lg font-medium">
+          I work with modern tools and technologies to build fast, scalable and efficient web applications.
+        </p>
+      </header>
+
+      {/* Tech Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
+        {technologies.map((tech, i) => (
+          <Magnetic key={i}>
+            <article className="tech-card glass-card rounded-2xl p-10 flex flex-col items-center text-center group hover:bg-white/[0.05] border border-white/5 hover:border-portfolioAccent/30 transition-all duration-500">
+              <div className="mb-8 h-20 w-20 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                {tech.icon}
+              </div>
+              <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight text-white group-hover:text-portfolioAccent transition-colors">
+                {tech.name}
+              </h3>
+              <p className="text-gray-500 text-sm leading-relaxed font-medium">
+                {tech.desc}
+              </p>
+              
+              {/* Decorative Accent */}
+              <motion.div 
+                initial={{ width: 0 }}
+                whileInView={{ width: 40 }}
+                className="mt-8 h-1 bg-portfolioAccent rounded-full"
+              />
+            </article>
+          </Magnetic>
+        ))}
+      </div>
+
+      {/* Divider */}
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-32" />
+
+      {/* Stats Row */}
+      <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+        {Stats.map((stat, i) => (
+          <div key={i} className="flex flex-col space-y-2 group">
+            <div className="text-6xl md:text-8xl font-black text-portfolioAccent tracking-tighter">
+              <span className="stat-value">0</span>
+              {stat.suffix}
+            </div>
+            <span className="text-[10px] uppercase tracking-[0.4em] text-gray-500 font-black group-hover:text-gray-300 transition-colors">
+              {stat.label}
+            </span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
