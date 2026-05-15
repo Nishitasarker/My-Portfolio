@@ -19,44 +19,54 @@ interface Project {
   icon: LucideIcon;
   btnLabel: string;
   btnIcon: LucideIcon;
+  liveLink: string;  
+  githubLink: string;
 }
 
 const projects: Project[] = [
   {
-    title: "MERN Todo App",
-    category: "Fullstack • 2025",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCLxHIcND2XYIXtyWWqZ6_uW0QMF-GvqMCJicmJ-0n1MWsg0uTvdUTUHS4kUd-kslpqD7QMSu0eKpegzHMQvWXXaHT7Mg5oT786r9zmFwd7yLpAnfAj13Zwwl-BIlhH4iuxPPryGBDRItrLXXgBMS3XZshhwsz5haBDWVyHahoeu4yJNcm_aYoHTAMAyNwCoRy_a4sAHHBSAHlD0Ru5A3K3fQs0gqFvfIOgSHgW982UwlWRwtnnwRy5dI54c2O0tpIY5U3YB7NqkZrz",
-    tags: ["MongoDB", "Express", "React"],
+    title: "Qurbani Nexus App",
+    category: "Fullstack • 2026",
+    image: "/AnimalsProject.png",
+    tags: ["Next.js","JavaScript (ES6+)","Tailwind CSS","Better-Auth","Google OAuth","MongoDB", "React.js"],
     icon: Rocket,
     btnLabel: "Live Demo",
-    btnIcon: Rocket
+    btnIcon: Rocket,
+    liveLink: "https://qurbani-haat-two.vercel.app", // আপনার লিঙ্ক
+    githubLink: "https://github.com/Nishitasarker/QurbaniHaat" // আপনার লিঙ্ক
   },
   {
-    title: "E-Commerce Demo",
-    category: "E-Commerce • 2025",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBOspxe_f6JNFYPeeefKf5TRFciHllOVsx-1PIOx3NSRD187pnshxecUTCTURNQJK3sxAcWsEQVpnmQ--4ADGp0Nv_JQAlvGoz1swnDrlJW9XQ3CxkFWWZ2RJpPrCshFeCJdBMBOshWGWvJQYa9khwa0kUbtn4DV88wmRMI3IRgsUX_ZjnSm8iA9nI_vhM_t1iVS_IY94kIVkqXHXd-lQIzD0Et0jVgjbJBnRPs4NjOZLcdUN3bkIzEcyjNM8yO4b1JDxRPr1iHmod0",
-    tags: ["Node.js", "Stripe", "Tailwind"],
+    title: "KeenKeeper: Personal Relationship Manager",
+    category: "Social CRM Platform • 2026",
+    image: "/KeenKeeper.png",
+    tags: ["Next.js","JavaScript (ES6+)","DaisyUI", "Tailwind CSS", "Recharts"],
     icon: ShoppingCart,
-    btnLabel: "View Store",
-    btnIcon: ShoppingCart
+    btnLabel: "Live Demo",
+    btnIcon: Rocket,
+    liveLink: "https://effervescent-jalebi-e2c324.netlify.app", // আপনার লিঙ্ক
+    githubLink: "https://github.com/Nishitasarker/Next-Js-Project" // আপনার লিঙ্ক
   },
   {
-    title: "AI Portfolio Assistant",
-    category: "Artificial Intelligence",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAxGrpoekA4HMbO03p7cbmce7_JnZw9201i_yBf833eXKXgqxrsj_4Lg_3txHn9HOrg1frq1HSDujSuG9MKj2GFSZycJnZIOckVNK_6BtxfzsxTAPqiyPy4IwwH900nRx_JEhfA677FxX3qPP4TZbDL8gLHZMzcV4e_Fbh51SZqJKlmk_C68UalSAF035Ab4bdrSZMoUF9ONQn5O5YoxXC7cOOD8EOUwabGsp_Lw-LDhF74WLxqFtceoqBAHlGWE1WKDS5XSvY0W0Co",
-    tags: ["OpenAI", "Next.js", "Vercel"],
+    title: "OmniDesk Tools",
+    category: "All-in-One Digital Tool Suite",
+    image: "/Digitools.png",
+    tags: ["React.js", "Vite", "Tailwind CSS", "DaisyUI", "JavaScript (ES6+)","React Router DOM"],
     icon: Bot,
-    btnLabel: "Try Assistant",
-    btnIcon: Bot
+    btnLabel: "Live Demo",
+    btnIcon: Rocket,
+    liveLink: "https://fancy-tiramisu-290684.netlify.app", // আপনার লিঙ্ক
+    githubLink: "https://github.com/Nishitasarker/Digitools-platform" // আপনার লিঙ্ক
   },
   {
-    title: "Cloud Dashboard",
-    category: "DevOps & Cloud",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDJU1hnJ2T-_nVz8VpoKKEaDwb5TVDivSeiC8L28H-MqJZ0Q5zcf6csm-VtzfeFNrLkG9tP6_b0cwDDzcickZN3FUim6fNbvnsccGYacCYA88SUepYfWq4rT1c2Rtr14mtwi_slWCmY7hcSy0Zoebo3s-oesMbhffOBRvvN3ae8Hj-JELtRTkRKq5mC4NGGwx3nsQfqZ7ueP2PZ7B9j3qG8En8PqZ9aC8PnMirBZVJMBhYAzP2ABPNsv8Nluvi2GWoknRitI9a9bRKX",
-    tags: ["AWS", "Docker", "Grafana"],
+    title: "DevFlow Tracker",
+    category: "Project Management Tool",
+    image: "/Github.png",
+    tags: ["HTML5 & CSS3", "Tailwind CSS", "JavaScript", "DaisyUI"],
     icon: Activity,
-    btnLabel: "Open Console",
-    btnIcon: Activity
+    btnLabel: "Live Demo",
+    btnIcon: Rocket,
+    liveLink: "https://nishitasarker.github.io/json-assignment/", // আপনার লিঙ্ক
+    githubLink: "https://github.com/Nishitasarker/json-assignment" // আপনার লিঙ্ক
   },
 ];
 
@@ -107,7 +117,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       }}
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ scale: 1.02, zIndex: 50 }}
+     
       transition={{ type: "spring", stiffness: 100, damping: 20, delay: index * 0.1 }}
       viewport={{ once: true }}
       className="group relative"
@@ -130,6 +140,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
               src={project.image}
               alt={project.title}
               fill
+              unoptimized
               className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
             />
           </motion.div>
@@ -139,7 +150,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-purple mb-2">
             {project.category}
           </span>
-          <h3 className="text-3xl font-black uppercase tracking-tighter mb-4 text-white group-hover:text-glow-purple transition-all">
+          <h3 className="text-xl font-black uppercase tracking-tighter mb-4 text-white group-hover:text-glow-purple transition-all">
             {project.title}
           </h3>
           
@@ -153,17 +164,27 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
           <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-auto">
             <Magnetic>
-              <button className="bg-brand-purple text-white text-[10px] font-black uppercase tracking-widest px-6 py-3 rounded-xl flex items-center gap-2 hover:bg-brand-purple/80 transition-all active:scale-95">
-                <project.btnIcon size={16} />
-                {project.btnLabel}
-              </button>
-            </Magnetic>
+    <a 
+      href={project.liveLink} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="bg-brand-purple text-white text-[10px] font-black uppercase tracking-widest px-6 py-3 rounded-xl flex items-center gap-2 hover:bg-brand-purple/80 transition-all active:scale-95"
+    >
+      <project.btnIcon size={16} />
+      {project.btnLabel}
+    </a>
+  </Magnetic>
             <Magnetic>
-              <button className="text-white/60 text-[10px] font-black uppercase tracking-widest px-6 py-3 rounded-xl border border-white/10 flex items-center gap-2 hover:bg-white/5 transition-all active:scale-95">
-                <Code size={16} />
-                GitHub
-              </button>
-            </Magnetic>
+    <a 
+      href={project.githubLink} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="text-white/60 text-[10px] font-black uppercase tracking-widest px-6 py-3 rounded-xl border border-white/10 flex items-center gap-2 hover:bg-white/5 transition-all active:scale-95"
+    >
+      <Code size={16} />
+      GitHub
+    </a>
+  </Magnetic>
           </div>
         </div>
       </motion.div>
