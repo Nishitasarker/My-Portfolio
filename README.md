@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🪐 Nishita Sarker | Full-Stack Developer & Data Analyst
 
-## Getting Started
+Welcome to my digital garden. This is a high-performance, immersive portfolio built to showcase the intersection of **complex web logic** and **statistical precision**.
 
-First, run the development server:
+[![Site Status](https://img.shields.io/website?url=https%3A%2F%2Fyour-portfolio-link.vercel.app&style=for-the-badge&logo=vercel)](https://your-portfolio-link.vercel.app)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/nishitasarker2005)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 The Vision
+As a student of **Statistics at Begum Rokeya University**, I don't just build interfaces; I build data-driven experiences. My goal is to turn complex problems into elegant, scalable, and interactive digital solutions.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Technical Arsenal
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### **Frontend & Design**
+- **Core:** Next.js 16 (App Router), React.js, TypeScript
+- **Styling:** Tailwind CSS, DaisyUI, Glassmorphism
+- **Animation:** GSAP (ScrollTrigger), Framer Motion (Physics-based transitions)
 
-## Learn More
+### **Backend & Database**
+- **Server:** Node.js, Next.js API Routes
+- **Database:** MongoDB (NoSQL), PostgreSQL
+- **Auth:** Better-Auth, Google OAuth 2.0
 
-To learn more about Next.js, take a look at the following resources:
+### **Data Science & Math**
+- **Tools:** Python (Pandas, NumPy), SPSS, Excel
+- **Focus:** Statistical Modeling, Probability, Central Moments Analysis
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📂 Featured Engineering
 
-## Deploy on Vercel
+### 01. [Qurbani Nexus](https://github.com/Nishitasarker/QurbaniHaat)
+A specialized E-commerce platform for sacrificial animals.
+- **Tech:** Next.js, MongoDB, Better-Auth.
+- **Highlight:** Complex filtering logic and secure marketplace architecture.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 02. [KeenKeeper](https://github.com/Nishitasarker/Next-Js-Project)
+A Personal Relationship Manager (Social CRM).
+- **Tech:** React, Tailwind, Recharts.
+- **Highlight:** Dynamic data visualization of personal networking metrics.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 03. [OmniDesk Tools](https://github.com/Nishitasarker/Digitools-platform)
+An all-in-one productivity suite for digital creators.
+- **Tech:** Vite, React Router, DaisyUI.
+
+---
+
+## 📈 Evolution (The Journey)
+- **2026 - Present:** Full Stack Developer at **Programming Hero**.
+- **2024 - Present:** B.Sc. in Statistics at **BRUR**.
+- **2024 - Present:** Junior Data Analyst on **BRUR Research Projects**.
+
+---
+
+## 🛠️ Local Development
+
+1. **Clone & Enter:**
+   ```bash
+   git clone [https://github.com/Nishitasarker/My-Portfolio.git](https://github.com/Nishitasarker/My-Portfolio.git)
+   cd My-Portfolio
