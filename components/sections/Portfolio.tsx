@@ -141,7 +141,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
               alt={project.title}
               fill
               unoptimized
-              className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              className="object-cover  transition-all duration-700"
             />
           </motion.div>
         </div>

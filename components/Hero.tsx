@@ -67,7 +67,7 @@ const Hero = () => {
                  alt="Nishita sarker Portrait"
                  width={800}
                  height={600}
-                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                 className="w-full h-full object-cover transition-all duration-700"
                  priority
                />
              </div>
