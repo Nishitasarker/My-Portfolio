@@ -72,7 +72,7 @@ export default function Services() {
       y: 40,
       stagger: 0.1,
       duration: 1,
-      ease: "easeOut",
+      ease: "expo.out",
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top 85%", // একটু নিচে নামিয়ে দিলাম যাতে তাড়াতাড়ি ট্রিগার হয়

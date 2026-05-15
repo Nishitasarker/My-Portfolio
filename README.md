@@ -1,61 +1,72 @@
-# 🪐 Nishita Sarker | Full-Stack Developer & Data Analyst
+# 💻 Nishita Sarker | Full-Stack Software Engineer
 
-Welcome to my digital garden. This is a high-performance, immersive portfolio built to showcase the intersection of **complex web logic** and **statistical precision**.
+I build scalable, high-performance web applications and interactive digital experiences. My approach blends **advanced programmatic logic** with **statistical precision** to solve complex real-world problems.
 
-[![Site Status](https://img.shields.io/website?url=https%3A%2F%2Fyour-portfolio-link.vercel.app&style=for-the-badge&logo=vercel)](https://your-portfolio-link.vercel.app)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/nishitasarker2005)
-
----
-
-## 🚀 The Vision
-As a student of **Statistics at Begum Rokeya University**, I don't just build interfaces; I build data-driven experiences. My goal is to turn complex problems into elegant, scalable, and interactive digital solutions.
-
-## 🛠️ Technical Arsenal
-
-### **Frontend & Design**
-- **Core:** Next.js 16 (App Router), React.js, TypeScript
-- **Styling:** Tailwind CSS, DaisyUI, Glassmorphism
-- **Animation:** GSAP (ScrollTrigger), Framer Motion (Physics-based transitions)
-
-### **Backend & Database**
-- **Server:** Node.js, Next.js API Routes
-- **Database:** MongoDB (NoSQL), PostgreSQL
-- **Auth:** Better-Auth, Google OAuth 2.0
-
-### **Data Science & Math**
-- **Tools:** Python (Pandas, NumPy), SPSS, Excel
-- **Focus:** Statistical Modeling, Probability, Central Moments Analysis
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live_Demo-8A2BE2?style=for-the-badge&logo=vercel)](https://your-portfolio-link.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-white?style=for-the-badge&logo=github)](https://github.com/Nishitasarker)
 
 ---
 
-## 📂 Featured Engineering
-
-### 01. [Qurbani Nexus](https://github.com/Nishitasarker/QurbaniHaat)
-A specialized E-commerce platform for sacrificial animals.
-- **Tech:** Next.js, MongoDB, Better-Auth.
-- **Highlight:** Complex filtering logic and secure marketplace architecture.
-
-### 02. [KeenKeeper](https://github.com/Nishitasarker/Next-Js-Project)
-A Personal Relationship Manager (Social CRM).
-- **Tech:** React, Tailwind, Recharts.
-- **Highlight:** Dynamic data visualization of personal networking metrics.
-
-### 03. [OmniDesk Tools](https://github.com/Nishitasarker/Digitools-platform)
-An all-in-one productivity suite for digital creators.
-- **Tech:** Vite, React Router, DaisyUI.
+## ⚡ Technical Philosophy
+I specialize in the **MERN Stack** and **Next.js ecosystem**. My development workflow is centered around:
+- **Clean Architecture:** Writing modular, reusable, and type-safe code.
+- **Performance:** Optimizing Core Web Vitals and minimizing bundle sizes.
+- **Data Logic:** Leveraging my background in **B.Sc. Statistics** to implement complex algorithms and data-driven features that standard developers might overlook.
 
 ---
 
-## 📈 Evolution (The Journey)
-- **2026 - Present:** Full Stack Developer at **Programming Hero**.
-- **2024 - Present:** B.Sc. in Statistics at **BRUR**.
-- **2024 - Present:** Junior Data Analyst on **BRUR Research Projects**.
+## 🛠️ Core Stack
+
+### **Development**
+- **Frameworks:** Next.js 16 (App Router), React.js
+- **Languages:** TypeScript, JavaScript (ES6+), C++, Python
+- **State & Auth:** Redux Toolkit, TanStack Query, Better-Auth, NextAuth.js
+- **Styling:** Tailwind CSS, Framer Motion, GSAP, Shadcn/UI
+
+### **Infrastructure & Tools**
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB (Aggregations), PostgreSQL, Prisma ORM
+- **DevOps:** Git/GitHub, Vercel, Netlify, Postman
 
 ---
 
-## 🛠️ Local Development
+## 🚀 Featured Engineering Projects
 
-1. **Clone & Enter:**
-   ```bash
-   git clone [https://github.com/Nishitasarker/My-Portfolio.git](https://github.com/Nishitasarker/My-Portfolio.git)
-   cd My-Portfolio
+### 🏗️ [Qurbani Nexus](https://github.com/Nishitasarker/QurbaniHaat)
+**Full-Stack Marketplace**
+- Built a secure E-commerce platform using **Next.js** and **MongoDB**.
+- Integrated **Google OAuth** and **Better-Auth** for robust user management.
+- Developed complex server-side filtering for real-time inventory tracking.
+
+### 📊 [KeenKeeper](https://github.com/Nishitasarker/Next-Js-Project)
+**Social CRM & Relationship Manager**
+- Engineered a dashboard to manage professional networking data.
+- Visualized interaction metrics using **Recharts**, turning raw activity logs into actionable insights.
+
+### 🛠️ [OmniDesk Tools](https://github.com/Nishitasarker/Digitools-platform)
+**Utility Suite**
+- A collection of high-utility digital tools optimized for low-latency performance using **Vite** and **React**.
+
+---
+
+## 🎓 The "Data-Driven" Advantage
+While my primary focus is **Software Engineering**, my academic background in **Statistics** at Begum Rokeya University gives me an edge in:
+- **Algorithm Optimization:** Applying mathematical models to improve code efficiency.
+- **Data Visualization:** Creating meaningful charts and dashboards that tell a story.
+- **Quantitative Logic:** Solving complex problems through probability and predictive analysis.
+
+---
+
+## 💼 Professional Experience
+- **Full Stack Developer** @ Programming Hero (2026 - Present)
+- **Junior Data Analyst** @ BRUR Research Projects (2024 - Present)
+
+---
+
+## 📬 Connect & Collaborate
+- **Email:** [nishitasarkerjui@gmail.com](mailto:nishitasarkerjui@gmail.com)
+- **LinkedIn:** [Nishita Sarker](https://www.linkedin.com/in/nishitasarker2005)
+- **WhatsApp:** [+8801750691825](https://wa.me/8801750691825)
+
+---
+*Driven by logic. Powered by code.*

@@ -41,7 +41,7 @@ const JourneyCard = ({ item, index, type }: { item: JourneyItem; index: number; 
         y: 0, 
         rotateX: 0,
         duration: 1.2, 
-        ease: "expo.out",
+       ease: "expo.out",
         scrollTrigger: {
           trigger: cardRef.current,
           start: "top 90%",

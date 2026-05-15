@@ -25,12 +25,12 @@ export default function Contact() {
     const ctx = gsap.context(() => {
       // কার্ডগুলো নিচ থেকে স্লাইড হয়ে আসবে
       gsap.from(".contact-info-card", {
-        y: 30, opacity: 0, stagger: 0.15, duration: 1, ease: "easeOut",
+        y: 30, opacity: 0, stagger: 0.15, duration: 1, ease: "expo.out",
         scrollTrigger: { trigger: containerRef.current, start: "top 80%" }
       });
       // ফর্মটি ডান থেকে আসবে
       gsap.from(".contact-form-container", {
-        x: 40, opacity: 0, duration: 1.2, ease: "easeOut",
+        x: 40, opacity: 0, duration: 1.2, ease: "expo.out",
         scrollTrigger: { trigger: containerRef.current, start: "top 75%" }
       });
     }, containerRef);

@@ -18,7 +18,7 @@ const About = () => {
         x: (i: number) => (i % 2 === 0 ? -50 : 50),
         stagger: 0.2,
         duration: 1,
-        ease: "easeOut",
+        ease: "expo.out",
         scrollTrigger: {
           trigger: ".timeline-container",
           start: "top 80%",
