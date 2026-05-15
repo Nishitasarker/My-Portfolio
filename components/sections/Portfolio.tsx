@@ -141,13 +141,13 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
               alt={project.title}
               fill
               unoptimized
-              className="object-cover  transition-all duration-700"
+              className="object-cover J transition-all duration-700"
             />
           </motion.div>
         </div>
 
         <div className="flex flex-col flex-grow text-center md:text-left z-10 font-hanken">
-          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-purple mb-2">
+          <span className="text-[15px] font-black uppercase tracking-[0.4em] text-brand-purple mb-2">
             {project.category}
           </span>
           <h3 className="text-xl font-black uppercase tracking-tighter mb-4 text-white group-hover:text-glow-purple transition-all">
@@ -156,7 +156,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           
           <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-8">
             {project.tags.map((tag) => (
-              <span key={tag} className="bg-white/5 px-3 py-1 rounded-full text-[10px] font-black text-slate-400 uppercase tracking-tighter border border-white/5">
+              <span key={tag} className="bg-white/5 px-3 py-1 rounded-full text-[12px] font-black text-slate-400 uppercase tracking-tighter border border-white/5">
                 {tag}
               </span>
             ))}
@@ -168,7 +168,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       href={project.liveLink} 
       target="_blank" 
       rel="noopener noreferrer"
-      className="bg-brand-purple text-white text-[10px] font-black uppercase tracking-widest px-6 py-3 rounded-xl flex items-center gap-2 hover:bg-brand-purple/80 transition-all active:scale-95"
+      className="bg-brand-purple text-white text-[13px] font-black uppercase tracking-widest px-6 py-3 rounded-xl flex items-center gap-2 hover:bg-brand-purple/80 transition-all active:scale-95"
     >
       <project.btnIcon size={16} />
       {project.btnLabel}
@@ -179,7 +179,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       href={project.githubLink} 
       target="_blank" 
       rel="noopener noreferrer"
-      className="text-white/60 text-[10px] font-black uppercase tracking-widest px-6 py-3 rounded-xl border border-white/10 flex items-center gap-2 hover:bg-white/5 transition-all active:scale-95"
+      className="text-white/60 text-[13px] font-black uppercase tracking-widest px-6 py-3 rounded-xl border border-white/10 flex items-center gap-2 hover:bg-white/5 transition-all active:scale-95"
     >
       <Code size={16} />
       GitHub
@@ -208,11 +208,11 @@ export default function Portfolio() {
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-brand-purple/5 blur-[100px] rounded-full" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="mb-32 text-center md:text-left">
+        <div className="text-center md:text-left">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85] mb-8"
+            className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85] "
           >
             Recent <br /> <span className="text-brand-purple text-glow-purple italic">Projects</span>
           </motion.h2>

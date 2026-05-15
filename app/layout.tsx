@@ -15,7 +15,7 @@ const hanken = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Reeni - Jane Cooper | Content Writer Portfolio",
+  title: "Nishi | Full-stack Developer & Data Analyst",
   description: "A premium animated portfolio showcasing modern web development and data science expertise.",
 };
 

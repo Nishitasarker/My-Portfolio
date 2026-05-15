@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, useScroll, useSpring } from "framer-motion";
 import Magnetic from "@/components/animations/Magnetic";
-import { Infinity } from "lucide-react";
+import { IoInfiniteOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -44,7 +44,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 flex items-center justify-center bg-brand-purple rounded-xl group-hover:rotate-[360deg] transition-transform duration-700">
-              <Infinity size={24} className="text-white" />
+             <IoInfiniteOutline size={28} className="text-white" />
             </div>
             <span className="text-2xl font-black tracking-tighter uppercase">Reeni</span>
           </Link>

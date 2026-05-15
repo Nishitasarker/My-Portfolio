@@ -18,7 +18,7 @@ const About = () => {
         x: (i: number) => (i % 2 === 0 ? -50 : 50),
         stagger: 0.2,
         duration: 1,
-        ease: "power4.out",
+        ease: "easeOut",
         scrollTrigger: {
           trigger: ".timeline-container",
           start: "top 80%",
@@ -60,10 +60,10 @@ const About = () => {
             </header>
             
             <div className="space-y-8">
-              <TextReveal className="text-gray-400 text-xl font-medium leading-relaxed">
+              <TextReveal className="text-gray-300 text-xl font-medium leading-relaxed">
                 I don&apos;t  just build websites; I engineer data-driven experiences. With a solid foundation in Statistics and a passion for modern web technologies, my work sits at the intersection of logical performance and visual storytelling. Whether it's analyzing complex datasets or building high-performance web apps, I focus on precision and efficiency.
               </TextReveal>
-              <TextReveal className="text-gray-500 text-lg leading-relaxed">
+              <TextReveal className="text-gray-300 text-lg leading-relaxed">
                 Every project is a unique challenge to push the boundaries of what&apos;s possible in the browser, focusing on speed, accessibility, and high-fidelity motion.
               </TextReveal>
             </div>
@@ -83,7 +83,7 @@ const About = () => {
                   <div className="space-y-2">
                     <span className="text-brand-purple font-black text-xs uppercase tracking-widest">{item.year}</span>
                     <h4 className="text-2xl font-bold text-white uppercase tracking-tight">{item.title}</h4>
-                    <p className="text-gray-500 max-w-sm">{item.desc}</p>
+                    <p className="text-gray-300 max-w-sm">{item.desc}</p>
                   </div>
                 </div>
               ))}

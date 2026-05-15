@@ -1,32 +1,33 @@
 @import "tailwindcss";
 
-/* 1. Theme Variables Configuration */
+/* 1. Theme Variables Configuration (Tailwind v4) */
 @theme {
-  --color-brand-purple: #7b61ff;
-  --color-brand-black: #0d0d0d;
+  --color-brand-deep: #093c5d;
+  --color-brand-muted: #3b7597;
+  --color-brand-teal: #6fd1d7;
+  --color-brand-cyan: #5df8d8;
+
+  /* আগের নামগুলোকে নতুন কালারে ম্যাপ করা হয়েছে যাতে কোড ভেঙে না যায় */
+  --color-brand-black: #093c5d; 
+  --color-brand-purple: #6fd1d7; 
 }
 
-/* 2. Dark Mode Variant for Tailwind v4 */
+/* 2. Dark Mode Variant */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* 3. Base Styles (Theme dependent) */
+/* 3. Base Styles */
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #000000;
-  }
-
-  .dark {
-    --background: #0d0d0d;
+    /* লাইট মোডেও ডার্ক শেডটি রাখা হয়েছে কারণ এই প্যালেটটি ডার্ক মোডে বেশি সুন্দর */
+    --background: #093c5d; 
     --foreground: #ffffff;
   }
 
   body {
-    background-color: var(--background);
+    background-color: var(--background) !important;
     color: var(--foreground);
-    font-family: 'Inter', sans-serif;
-    transition-property: background-color, color;
-    transition-duration: 300ms;
+    font-family: 'Inter', var(--font-inter), sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
@@ -41,39 +42,47 @@
     width: 100%;
     height: 100%;
     content: "";
-    opacity: 0.05;
+    opacity: 0.04;
     z-index: 9999;
     pointer-events: none;
     background-image: url("https://res.cloudinary.com/dvhndv7be/image/upload/v1673003051/noise_pwh7u6.png");
   }
 
-  /* Grid background dark/light onujayi change hobe */
+  /* Grid background - Cyan শেড অনুযায়ী */
   .grid-background {
     background-size: 40px 40px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(93, 248, 216, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(93, 248, 216, 0.05) 1px, transparent 1px);
     mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
   }
   
-  .dark .grid-background {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  }
-
   .nav-link {
-    @apply transition-colors duration-300 text-sm font-medium;
+    @apply transition-all duration-300 text-xl font-medium;
   }
 
+  /* হোভার করলে Teal কালার হবে */
   .nav-link:hover, .nav-link-active {
-    @apply text-brand-purple;
+    color: #6fd1d7 !important;
+    text-shadow: 0 0 10px rgba(111, 209, 215, 0.4);
   }
 
   .glass-card {
-    @apply bg-black/5 dark:bg-white/5 backdrop-blur-xl border border-black/10 dark:border-white/10 rounded-2xl;
+    @apply backdrop-blur-xl border border-white/10 rounded-2xl;
+    background-color: rgba(59, 117, 151, 0.15); /* Muted Blue transparent */
   }
 
-  /* Baki utilities jemon silo temoni thakbe... */
-  .vertical-text { writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); }
-  .text-glow-purple { text-shadow: 0 0 20px rgba(123, 97, 255, 0.5); }
-  .font-hanken { font-family: var(--font-hanken), sans-serif; }
+  .vertical-text { 
+    writing-mode: vertical-rl; 
+    text-orientation: mixed; 
+    transform: rotate(180deg); 
+  }
+
+  /* Cyan Glow for text/icons */
+  .text-glow-cyan { 
+    text-shadow: 0 0 20px rgba(93, 248, 216, 0.5); 
+  }
+
+  .font-hanken { 
+    font-family: var(--font-hanken), sans-serif; 
+  }
 }

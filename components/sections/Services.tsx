@@ -56,11 +56,7 @@ const technologies = [
   },
 ];
 
-const Stats = [
-  { value: 120, suffix: "+", label: "Projects Completed" },
-  { value: 95, suffix: "%", label: "Success Rate" },
-  { value: 10, suffix: "+", label: "Years Experience" },
-];
+
 
 export default function Services() {
   const containerRef = useRef<HTMLElement>(null);
@@ -76,7 +72,7 @@ export default function Services() {
       y: 40,
       stagger: 0.1,
       duration: 1,
-      ease: "power4.out",
+      ease: "easeOut",
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top 85%", // একটু নিচে নামিয়ে দিলাম যাতে তাড়াতাড়ি ট্রিগার হয়
@@ -106,20 +102,20 @@ export default function Services() {
   }, []);
 
   return (
-    <section ref={containerRef} id="services" className="py-32 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto font-hanken">
+    <section ref={containerRef} id="services" className="pt-32 pb-10 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto font-hanken">
       {/* Section Header */}
       <header className="text-center mb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-portfolioAccent font-black uppercase tracking-[0.4em] text-xs mb-6"
+          className="text-portfolioAccent font-black uppercase tracking-[0.4em] text-lg mb-6"
         >
           Capabilities
         </motion.div>
         <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-8">
           Skills & <span className="text-glow-purple italic text-brand-purple">Technologies</span>
         </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto text-lg font-medium">
+        <p className="text-gray-300 max-w-2xl mx-auto text-xl font-bold">
           I work with modern tools and technologies to build fast, scalable and efficient web applications.
         </p>
       </header>
@@ -135,7 +131,7 @@ export default function Services() {
               <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight text-white group-hover:text-portfolioAccent transition-colors">
                 {tech.name}
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed font-medium">
+              <p className="text-gray-300 text-sm leading-relaxed font-bold">
                 {tech.desc}
               </p>
               
@@ -153,20 +149,7 @@ export default function Services() {
       {/* Divider */}
       <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-32" />
 
-      {/* Stats Row */}
-      <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-        {Stats.map((stat, i) => (
-          <div key={i} className="flex flex-col space-y-2 group">
-            <div className="text-6xl md:text-8xl font-black text-portfolioAccent tracking-tighter">
-              <span className="stat-value">0</span>
-              {stat.suffix}
-            </div>
-            <span className="text-[10px] uppercase tracking-[0.4em] text-gray-500 font-black group-hover:text-gray-300 transition-colors">
-              {stat.label}
-            </span>
-          </div>
-        ))}
-      </div>
+     
     </section>
   );
 }

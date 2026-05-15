@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <SmoothScroll>
       <Loader />
-      <div className="relative min-h-screen bg-brand-black selection:bg-brand-purple selection:text-white">
+      <div className="relative min-h-screen bg-brand-cream selection:bg-brand-purple selection:text-white">
         <div className="noise-overlay" />
         <MouseFollower />
        

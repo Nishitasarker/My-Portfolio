@@ -18,7 +18,7 @@ const TextReveal = ({ children, className = "" }: { children: React.ReactNode, c
       rotateX: -90,
       stagger: 0.02,
       duration: 1,
-      ease: "power4.out",
+      ease: "easeOut",
       scrollTrigger: {
         trigger: textRef.current,
         start: "top 80%",

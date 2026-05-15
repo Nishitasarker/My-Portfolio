@@ -6,7 +6,6 @@ import {
   Code2, 
   Globe, 
   Zap, 
-  Cpu, 
   Database, 
   DatabaseZap, 
   Table, 
@@ -20,42 +19,40 @@ interface Skill {
   name: string;
   icon: LucideIcon;
   mastery: number;
-  color: "blue" | "purple" | "orange" | "green";
+  color: "purple" | "cyan" | "indigo";
 }
 
 const skills: Skill[] = [
   // Web Development
-  { name: "JavaScript", icon: FileJson, mastery: 92, color: "orange" },
-  { name: "React", icon: Code2, mastery: 95, color: "blue" },
-  { name: "Next.js", icon: Globe, mastery: 90, color: "purple" },
-  { name: "Node.js", icon: Zap, mastery: 85, color: "green" },
+  { name: "JavaScript", icon: FileJson, mastery: 92, color: "cyan" },
+  { name: "React", icon: Code2, mastery: 95, color: "purple" },
+  { name: "Next.js", icon: Globe, mastery: 90, color: "indigo" },
+  { name: "Node.js", icon: Zap, mastery: 85, color: "cyan" },
   
   // Database
-  { name: "MongoDB", icon: DatabaseZap, mastery: 80, color: "green" },
-  { name: "SQL", icon: Database, mastery: 88, color: "blue" },
-  { name: "MS Access", icon: Table, mastery: 85, color: "purple" },
+  { name: "MongoDB", icon: DatabaseZap, mastery: 80, color: "purple" },
+  { name: "SQL", icon: Database, mastery: 88, color: "indigo" },
+  { name: "MS Access", icon: Table, mastery: 85, color: "cyan" },
   
   // Statistical Tools
-  { name: "Stata", icon: BarChart3, mastery: 82, color: "blue" },
-  { name: "SPSS", icon: PieChart, mastery: 80, color: "orange" },
+  { name: "Stata", icon: BarChart3, mastery: 82, color: "purple" },
+  { name: "SPSS", icon: PieChart, mastery: 80, color: "indigo" },
 ];
 
 const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
   const { tilt, onMouseMove, onMouseLeave } = useTilt(15);
 
-  // Tailwind Dynamic Colors Mapping
+  // Portfolio এর কালার প্যালেট অনুযায়ী ম্যাপিং
   const colorClasses = {
-    blue: "hover:border-blue-500 bg-blue-500/10 text-blue-500",
-    purple: "hover:border-purple-500 bg-purple-500/10 text-purple-500",
-    orange: "hover:border-orange-500 bg-orange-500/10 text-orange-500",
-    green: "hover:border-green-500 bg-green-500/10 text-green-500",
+    purple: "hover:border-brand-purple bg-brand-purple/10 text-brand-purple",
+    cyan: "hover:border-cyan-400 bg-cyan-400/10 text-cyan-400",
+    indigo: "hover:border-indigo-400 bg-indigo-400/10 text-indigo-400",
   };
 
   const barColors = {
-    blue: "bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]",
-    purple: "bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)]",
-    orange: "bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.5)]",
-    green: "bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]",
+    purple: "bg-brand-purple shadow-[0_0_15px_rgba(168,85,247,0.5)]",
+    cyan: "bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.5)]",
+    indigo: "bg-indigo-400 shadow-[0_0_15px_rgba(129,140,248,0.5)]",
   };
 
   return (
@@ -77,13 +74,15 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
         <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-100 group-hover:text-white ${colorClasses[skill.color].split(' ').slice(1).join(' ')}`}>
           <skill.icon size={28} strokeWidth={1.5} />
         </div>
-        <span className="text-4xl font-black text-white/10 group-hover:text-white/20 transition-colors uppercase tracking-widest">
+        <span className="text-4xl font-black text-white/5 group-hover:text-white/10 transition-colors uppercase tracking-widest">
           {skill.mastery}%
         </span>
       </div>
 
       <div className="space-y-4">
-        <h3 className="text-2xl font-bold uppercase tracking-tight text-white">{skill.name}</h3>
+        <h3 className="text-2xl font-bold uppercase tracking-tight text-white group-hover:text-brand-purple transition-colors">
+          {skill.name}
+        </h3>
         <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
           <motion.div
             initial={{ width: 0 }}
@@ -99,18 +98,22 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-black">
+    <section id="skills" className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-[#0f172a]">
+      {/* Portfolio এর মতো একই ব্যাকগ্রাউন্ড গ্লো */}
+      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-purple/10 blur-[120px] rounded-full" />
+      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-brand-purple/5 blur-[100px] rounded-full" />
+
       <div className="max-w-7xl mx-auto relative z-10">
         <header className="mb-20 space-y-6 text-center md:text-left">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="text-purple-500 font-black uppercase tracking-[0.4em] text-xs"
+            className="text-brand-purple font-black uppercase tracking-[0.4em] text-xs"
           >
             Technical Arsenal
           </motion.div>
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">
-            My <span className="text-purple-500 italic">Digital</span> Tools
+          <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85] text-white">
+            My <span className="text-brand-purple text-glow-purple italic">Digital</span> Tools
           </h2>
         </header>
 
@@ -120,9 +123,6 @@ const SkillsSection = () => {
           ))}
         </div>
       </div>
-
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-500/5 blur-[150px] pointer-events-none rounded-full" />
     </section>
   );
 };

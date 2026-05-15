@@ -54,7 +54,7 @@ const SkillsMarquee = () => {
       >
         {[...skills, ...skills].map((skill, i) => (
           <div key={i} className="flex items-center gap-6">
-            <span className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-gray-800 hover:text-brand-purple transition-colors duration-500">
+            <span className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white hover:text-brand-purple transition-colors duration-500">
               {/* ✅ নিচে skill এর জায়গায় skill.name দিন */}
               {skill.name} 
             </span>
