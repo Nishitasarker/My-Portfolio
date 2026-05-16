@@ -1,6 +1,6 @@
 "use client";
-import React from "react";
-import { useEffect, useRef, useState } from "react";
+
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,18 +17,17 @@ const contactInfo = [
 ];
 
 export default function Contact() {
-  const containerRef = useRef(null);
-  const formRef = useRef(null); 
-  const [formState, setFormState] = useState("idle");
+  // useRef এ HTMLFormElement টাইপ যোগ করা হয়েছে যাতে reset() কাজ করে
+  const containerRef = useRef<HTMLElement>(null);
+  const formRef = useRef<HTMLFormElement>(null); 
+  const [formState, setFormState] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // কার্ডগুলো নিচ থেকে স্লাইড হয়ে আসবে
       gsap.from(".contact-info-card", {
         y: 30, opacity: 0, stagger: 0.15, duration: 1, ease: "expo.out",
         scrollTrigger: { trigger: containerRef.current, start: "top 80%" }
       });
-      // ফর্মটি ডান থেকে আসবে
       gsap.from(".contact-form-container", {
         x: 40, opacity: 0, duration: 1.2, ease: "expo.out",
         scrollTrigger: { trigger: containerRef.current, start: "top 75%" }
@@ -37,12 +36,17 @@ export default function Contact() {
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formRef.current) return;
     setFormState("sending");
 
-    emailjs.sendForm('service_lbp5z4j', 'template_e1qzjwc', formRef.current, '7iZZm8_oXhbhFPZSQ')
+    emailjs.sendForm(
+      'service_lbp5z4j', 
+      'template_e1qzjwc', 
+      formRef.current, 
+      '7iZZm8_oXhbhFPZSQ'
+    )
     .then(() => {
       setFormState("success");
       formRef.current?.reset(); 
@@ -56,7 +60,7 @@ export default function Contact() {
   };
 
   return (
-    <section ref={containerRef} id="contact" className="py-32 px-6 md:px-12 lg:px-24 bg-brand-deep text-white overflow-hidden">
+    <section ref={containerRef} id="contact" className="relative py-32 px-6 md:px-12 lg:px-24 bg-brand-deep text-white overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
           
@@ -101,7 +105,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right Side: Contact Form (Design kept original) */}
+          {/* Right Side: Contact Form */}
           <motion.div 
             whileHover={{ y: -5 }}
             className="contact-form-container bg-brand-muted/10 backdrop-blur-xl p-10 md:p-12 border border-white/5 relative overflow-hidden rounded-[2rem]"
@@ -133,7 +137,7 @@ export default function Contact() {
                 <button 
                   type="submit"
                   disabled={formState === "sending" || formState === "success"} 
-                  className="w-full bg-brand-deep hover:bg-brand-muted text-white font-black uppercase tracking-widest py-5 rounded-2xl flex items-center justify-center gap-3 transition-all active:scale-95 disabled:opacity-50 shadow-[0_10px_30px_rgba(111,209,215,0.2)]"
+                  className="w-full bg-brand-teal text-brand-deep font-black uppercase tracking-widest py-5 rounded-2xl flex items-center justify-center gap-3 transition-all active:scale-95 disabled:opacity-50 shadow-[0_10px_30px_rgba(111,209,215,0.2)]"
                 >
                   <AnimatePresence mode="wait">
                     {formState === "idle" && (
@@ -153,7 +157,7 @@ export default function Contact() {
                       </motion.div>
                     )}
                     {formState === "error" && (
-                      <motion.div key="error" className="text-red-900">Something Failed!</motion.div>
+                      <motion.div key="error" className="text-red-500">Something Failed!</motion.div>
                     )}
                   </AnimatePresence>
                 </button>

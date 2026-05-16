@@ -66,7 +66,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-20 px-6 md:px-12 lg:px-24 border-t border-white/5 relative overflow-hidden">
+    <footer className="py-20 px-6 md:px-12 lg:px-24 border-t border-gray-400 relative overflow-hidden">
       <motion.div 
         className="max-w-7xl mx-auto"
         initial="hidden"

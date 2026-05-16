@@ -31,7 +31,7 @@ const Hero = () => {
   };
 
   return (
-    <main className="min-h-screen flex items-center pt-20 overflow-hidden bg-black">
+    <main className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-brand-deep">
       <div className="max-w-7xl mx-auto px-6 w-full py-12 md:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         {/* Left Content Section */}
@@ -125,7 +125,7 @@ const Hero = () => {
            >
              <div className="relative overflow-hidden rounded-xl bg-gray-900 h-[450px] w-[320px] md:h-[550px] md:w-[400px]">
                <Image
-                 src="/portfolio-image.png" // কমা (,) সরিয়ে হাইফেন (-) বা সঠিক ফাইলের নাম দিন
+                 src="/portfolio,image.png" 
                  alt="Nishita Sarker Portrait"
                  width={800}
                  height={600}
