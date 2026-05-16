@@ -31,7 +31,7 @@ const Hero = () => {
   };
 
   return (
-    <main className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-brand-deep">
+    <main id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-brand-deep">
       <div className="max-w-7xl mx-auto px-6 w-full py-12 md:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         {/* Left Content Section */}

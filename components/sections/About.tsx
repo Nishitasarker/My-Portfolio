@@ -68,7 +68,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" ref={containerRef} className="py-32 px-6 md:px-12 lg:px-24">
+    <section id="about"  ref={containerRef} className="py-32 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div className="space-y-12">

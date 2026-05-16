@@ -1,12 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Magnetic from "@/components/animations/Magnetic";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const technologies = [
   {
@@ -56,37 +51,37 @@ const technologies = [
   },
 ];
 
+// Framer Motion এর জন্য এনিমেশন ভ্যারিয়েন্ট কনফিগারেশন
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1, // প্রতিটি কার্ড একের পর এক আসবে (Stagger effect)
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1] as const, // expo.out এর সমতুল্য কাস্টম বেজিয়ার কার্ভ
+    },
+  },
+};
+
 export default function Services() {
-  const containerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    ScrollTrigger.refresh();
-    const ctx = gsap.context(() => {
-      // Staggered Tech Cards Entrance
-      gsap.from(".tech-card", {
-        opacity: 0,
-        y: 40,
-        stagger: 0.1,
-        duration: 1,
-        ease: "expo.out",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 85%",
-          toggleActions: "play none none none",
-          once: true,
-        },
-      });
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={containerRef} id="services" className="pt-32 pb-10 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto">
+    <section id="services" className="pt-32 pb-10 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto">
       <header className="text-center mb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           className="text-brand-purple font-black uppercase tracking-[0.4em] text-xs mb-6"
         >
           Capabilities
@@ -99,29 +94,41 @@ export default function Services() {
         </p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* কন্টেইনারে অ্যানিমেশন কন্ট্রোল যোগ করা হয়েছে */}
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-10% 0px" }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
         {technologies.map((tech, i) => (
           <Magnetic key={i}>
-            <article className="tech-card bg-white/[0.02] backdrop-blur-sm rounded-2xl p-10 flex flex-col items-center text-center group hover:bg-white/[0.05] border border-white/5 hover:border-brand-purple/30 transition-all duration-500">
+            {/* প্রতিটি কার্ডকে motion.article বানানো হয়েছে */}
+            <motion.article 
+              variants={cardVariants}
+              className="tech-card bg-white/[0.02] backdrop-blur-sm rounded-2xl p-10 flex flex-col items-center text-center group hover:bg-white/[0.05] border border-white/5 hover:border-brand-purple/30 transition-all duration-500"
+            >
               <div className="mb-8 h-20 w-20 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
                 {tech.icon}
               </div>
               <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight text-white group-hover:text-brand-purple transition-colors">
                 {tech.name}
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-300 text-base leading-relaxed">
                 {tech.desc}
               </p>
               
               <motion.div 
                 initial={{ width: 0 }}
                 whileInView={{ width: 40 }}
+                viewport={{ once: true }}
                 className="mt-8 h-1 bg-brand-purple rounded-full"
               />
-            </article>
+            </motion.article>
           </Magnetic>
         ))}
-      </div>
+      </motion.div>
       
       <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mt-32" />
     </section>

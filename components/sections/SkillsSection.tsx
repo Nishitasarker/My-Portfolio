@@ -98,7 +98,7 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-[#0f172a]">
+    <section id="digitools" className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-[#0f172a]">
       {/* Portfolio এর মতো একই ব্যাকগ্রাউন্ড গ্লো */}
       <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-purple/10 blur-[120px] rounded-full" />
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-brand-purple/5 blur-[100px] rounded-full" />

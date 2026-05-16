@@ -17,6 +17,9 @@ const hanken = Hanken_Grotesk({
 export const metadata: Metadata = {
   title: "Nishi | Full-stack Developer & Data Analyst",
   description: "A premium animated portfolio showcasing modern web development and data science expertise.",
+icons: {
+    icon: "/icon.png", // এটি আপনার ব্রাউজার ট্যাবে নামের পাশে লোগো হিসেবে দেখাবে
+  },
 };
 
 export default function RootLayout({
