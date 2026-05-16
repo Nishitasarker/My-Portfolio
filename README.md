@@ -1,72 +1,96 @@
-# 💻 Nishita Sarker | Full-Stack Software Engineer
+# 🌐 Modern Full-Stack Portfolio Website
 
-I build scalable, high-performance web applications and interactive digital experiences. My approach blends **advanced programmatic logic** with **statistical precision** to solve complex real-world problems.
+Welcome to my personal portfolio repository! This is a cutting-edge, high-performance web application designed to showcase my skills, projects, and expertise as a **Full-Stack Web Developer** and **Data Analyst**. Built with modern technologies like **Next.js**, **React**, and **MongoDB**, it features premium UI/UX designs, fluid physics-based animations, and smooth responsiveness.
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live_Demo-8A2BE2?style=for-the-badge&logo=vercel)](https://your-portfolio-link.vercel.app)
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-white?style=for-the-badge&logo=github)](https://github.com/Nishitasarker)
-
----
-
-## ⚡ Technical Philosophy
-I specialize in the **MERN Stack** and **Next.js ecosystem**. My development workflow is centered around:
-- **Clean Architecture:** Writing modular, reusable, and type-safe code.
-- **Performance:** Optimizing Core Web Vitals and minimizing bundle sizes.
-- **Data Logic:** Leveraging my background in **B.Sc. Statistics** to implement complex algorithms and data-driven features that standard developers might overlook.
+Live Demo: [your-portfolio-link.vercel.app](https://my-portfolio-six-ashen-rohyxjkk3k.vercel.app) *(Replace with your actual live link)*
 
 ---
 
-## 🛠️ Core Stack
+## 🚀 Key Focus Areas
 
-### **Development**
-- **Frameworks:** Next.js 16 (App Router), React.js
-- **Languages:** TypeScript, JavaScript (ES6+), C++, Python
-- **State & Auth:** Redux Toolkit, TanStack Query, Better-Auth, NextAuth.js
-- **Styling:** Tailwind CSS, Framer Motion, GSAP, Shadcn/UI
-
-### **Infrastructure & Tools**
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB (Aggregations), PostgreSQL, Prisma ORM
-- **DevOps:** Git/GitHub, Vercel, Netlify, Postman
+- **Frontend Excellence:** Specialized in crafting pixel-perfect, highly responsive User Interfaces (UI) using Next.js and Tailwind CSS, enriched with framer-motion physics for a tactile desktop experience.
+- **Robust Backend & Databases:** Experienced in building secure, structured, and fast APIs, integrating database management systems like MongoDB, and keeping security at the forefront.
+- **Data-Driven Approach:** Combining full-stack engineering with data analysis to bridge the gap between elegant interface design and clean, statistical backend modeling.
 
 ---
 
-## 🚀 Featured Engineering Projects
+## 🛠️ Tech Stack & Features
 
-### 🏗️ [Qurbani Nexus](https://github.com/Nishitasarker/QurbaniHaat)
-**Full-Stack Marketplace**
-- Built a secure E-commerce platform using **Next.js** and **MongoDB**.
-- Integrated **Google OAuth** and **Better-Auth** for robust user management.
-- Developed complex server-side filtering for real-time inventory tracking.
+### **Frontend & UI/UX**
+* **Framework:** Next.js (App Router, Server Components)
+* **Library:** React.js
+* **Styling:** Tailwind CSS (Modern Dark-Neutral Palette)
+* **Animations:** Framer Motion (Fluid custom transitions & Staggered layouts)
+* **Interactions:** Custom `Magnetic` effects for icons and interactive call-to-actions
+* **Icons:** Lucide React & React Icons
 
-### 📊 [KeenKeeper](https://github.com/Nishitasarker/Next-Js-Project)
-**Social CRM & Relationship Manager**
-- Engineered a dashboard to manage professional networking data.
-- Visualized interaction metrics using **Recharts**, turning raw activity logs into actionable insights.
-
-### 🛠️ [OmniDesk Tools](https://github.com/Nishitasarker/Digitools-platform)
-**Utility Suite**
-- A collection of high-utility digital tools optimized for low-latency performance using **Vite** and **React**.
+### **Backend & Data**
+* **Database:** MongoDB (Efficient schema design and management)
+* **API Routing:** Next.js Serverless Route Handlers
+* **Optimization:** SEO friendly architecture, semantic HTML, and smart image caching
 
 ---
 
-## 🎓 The "Data-Driven" Advantage
-While my primary focus is **Software Engineering**, my academic background in **Statistics** at Begum Rokeya University gives me an edge in:
-- **Algorithm Optimization:** Applying mathematical models to improve code efficiency.
-- **Data Visualization:** Creating meaningful charts and dashboards that tell a story.
-- **Quantitative Logic:** Solving complex problems through probability and predictive analysis.
+## 📂 Project Structure Highlights
 
----
+A look into how the project is organized to remain scalable and modular:
 
-## 💼 Professional Experience
-- **Full Stack Developer** @ Programming Hero (2026 - Present)
-- **Junior Data Analyst** @ BRUR Research Projects (2024 - Present)
+```text
+├── components/
+│   ├── animations/     # Custom animation hooks like Magnetic.tsx
+│   ├── ui/             # Reusable UI component elements
+│   └── Footer.tsx      # Optimized modern footer with smooth interactions
+├── app/
+│   ├── layout.tsx      # Main wrapper & global styling configs
+│   ├── page.tsx        # Main homepage landing screen
+│   └── globals.css     # Centralized Tailwind CSS declarations
+├── public/             # Static assets (images, custom SVGs)
+└── package.json        # Dependencies & script setups
 
----
+🏎️ Getting Started Locally
+Follow these steps to set up and run the portfolio website on your local machine:
 
-## 📬 Connect & Collaborate
-- **Email:** [nishitasarkerjui@gmail.com](mailto:nishitasarkerjui@gmail.com)
-- **LinkedIn:** [Nishita Sarker](https://www.linkedin.com/in/nishitasarker2005)
-- **WhatsApp:** [+8801750691825](https://wa.me/8801750691825)
+1. Prerequisites
+Ensure you have Node.js (v18.x or later) and npm/yarn installed.
 
----
-*Driven by logic. Powered by code.*
+2. Clone the Repository
+Bash
+git clone [https://github.com/Nishitasarker/My-Portfolio.git](https://github.com/Nishitasarker/My-Portfolio.git)
+cd My-Portfolio
+3. Install Dependencies
+Bash
+npm install
+# or
+yarn install
+4. Setup Environment Variables
+Create a .env.local file in the root directory and add your secret keys (e.g., MongoDB URI, Email Service configurations):
+
+Code snippet
+MONGODB_URI=your_mongodb_connection_string
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+5. Run the Development Server
+Bash
+npm run dev
+# or
+yarn dev
+Open http://localhost:3000 in your browser to see your local instance up and running.
+
+📈 Optimization & Bug Fixes Included
+Cubic Bezier Custom Easing: Fully optimized animations by switching invalid easing properties to raw bezier vectors [0.16, 1, 0.3, 1] for ultra-smooth performance.
+
+Scroll Offset Calculations: Enhanced layout wrappers using relative bounding boxes to eliminate browser console scroll calculation warnings.
+
+Type Inference: Code rewritten cleanly without intrusive : any typings to assure smooth compilation during production deployments on platforms like Vercel.
+
+📬 Connect With Me
+Let's collaborate on building innovative web solutions or analyzing complex data patterns!
+
+LinkedIn: @NishitaSarker
+
+GitHub: @Nishitasarker
+
+WhatsApp: +8801750691825
+
+Email: nishitasarkerjui@gmail.com
+
+Developed with 💜 by Nishi.

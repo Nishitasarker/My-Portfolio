@@ -46,7 +46,7 @@ const skills: Skill[] = [
 
 const SkillsMarquee = () => {
   return (
-    <div className="py-20 border-y border-white/5 bg-brand-black/50 overflow-hidden">
+    <div className="py-20 border-y border-white/5 bg-white/5 bg-opacity-20 overflow-hidden">
       <motion.div
         animate={{ x: [0, -1000] }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
