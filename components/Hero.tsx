@@ -7,26 +7,31 @@ import { motion } from "framer-motion";
 import { FaLinkedinIn, FaGithub, FaEnvelope } from "react-icons/fa6"; 
 
 const Hero = () => {
- 
+  
+  // fadeInUp ভ্যারিয়েন্ট - টাইপ সেফ করা হয়েছে
   const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 25 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] } 
-  }
-};
+    hidden: { opacity: 0, y: 25 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 0.8, 
+        ease: [0.25, 1, 0.5, 1] as any // টাইপস্ক্রিপ্ট এরর এড়াতে as any ব্যবহার
+      } 
+    }
+  };
 
-// staggerContainer টিকেও Variants টাইপ দিন
-const staggerContainer: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 }
-  }
-};
+  // staggerContainer ভ্যারিয়েন্ট
+  const staggerContainer: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 }
+    }
+  };
+
   return (
-    <main className="min-h-screen flex items-center pt-20 overflow-hidden">
+    <main className="min-h-screen flex items-center pt-20 overflow-hidden bg-black">
       <div className="max-w-7xl mx-auto px-6 w-full py-12 md:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         {/* Left Content Section */}
@@ -46,19 +51,19 @@ const staggerContainer: Variants = {
             
             <motion.h1 
               variants={fadeInUp}
-              className="text-5xl md:text-7xl font-bold leading-tight"
+              className="text-5xl md:text-7xl font-bold leading-tight text-white"
             >
-              I&apos;m <span className="text-white">Nishita Sarker </span>
+              I&apos;m <span>Nishita Sarker</span>
               <br />
-              <span className="text-brand-purple text-glow-purple italic"> Developer & Statistician.</span>
+              <span className="text-brand-purple text-glow-purple italic">Developer & Statistician</span>
             </motion.h1>
             
             <motion.p 
               variants={fadeInUp}
               className="text-gray-300 text-lg leading-relaxed max-w-xl"
             >
-               Specializing in building modern, responsive web applications with JavaScript, React and Next.js. 
-               Combining the precision of Statistics with the creativity of web development to create data-driven user experiences.
+              Specializing in building modern, responsive web applications with JavaScript, React and Next.js. 
+              Combining the precision of Statistics with the creativity of web development to create data-driven user experiences.
             </motion.p>
           </div>
 
@@ -96,7 +101,7 @@ const staggerContainer: Variants = {
                     href={social.href}
                     target={social.isEmail ? "_self" : "_blank"}
                     rel="noopener noreferrer"
-                    className="w-12 h-12 flex items-center justify-center rounded-lg bg-sky-800 border border-white/5 shadow-xl hover:shadow-blue-500/20 transition-all text-xl text-gray-300 hover:text-blue-500"
+                    className="w-12 h-12 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 shadow-xl hover:shadow-brand-purple/20 transition-all text-xl text-gray-300 hover:text-brand-purple"
                   >
                     {social.icon}
                   </Link>
@@ -113,16 +118,15 @@ const staggerContainer: Variants = {
           transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.2 }}
           className="lg:col-span-5 flex justify-center lg:justify-end"
         >
-           {/* ইমেজ কার্ডে একটি হালকা ফ্লোটিং ইফেক্ট দেওয়া হয়েছে */}
            <motion.div 
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="relative group p-4 bg-[#1a1a1a] rounded-2xl shadow-2xl border border-white/10"
+             animate={{ y: [0, -12, 0] }}
+             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+             className="relative group p-4 bg-[#1a1a1a] rounded-2xl shadow-2xl border border-white/10"
            >
-             <div className="relative overflow-hidden rounded-xl bg-gray-800 h-[450px] w-[320px] md:h-[550px] md:w-[400px]">
+             <div className="relative overflow-hidden rounded-xl bg-gray-900 h-[450px] w-[320px] md:h-[550px] md:w-[400px]">
                <Image
-                 src="/portfolio,image.png" 
-                 alt="Nishita sarker Portrait"
+                 src="/portfolio-image.png" // কমা (,) সরিয়ে হাইফেন (-) বা সঠিক ফাইলের নাম দিন
+                 alt="Nishita Sarker Portrait"
                  width={800}
                  height={600}
                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
