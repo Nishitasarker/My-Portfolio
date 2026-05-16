@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextReveal from "@/components/animations/TextReveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// ডাটা আইটেমের জন্য একটি ইন্টারফেস তৈরি করা হলো যাতে টাইপ এরর না আসে
+// ডাটা আইটেমের জন্য টাইপ ডিফাইন করা
 interface TimelineItemType {
   year: string;
   title: string;
@@ -48,6 +48,7 @@ const About = () => {
     return () => ctx.revert();
   }, []);
 
+  // ডাটা লিস্ট যাতে 'year' প্রোপার্টি আছে
   const timelineData: TimelineItemType[] = [
     { 
       year: "Phase 01", 
@@ -86,7 +87,7 @@ const About = () => {
             
             <div className="space-y-8">
               <TextReveal className="text-gray-300 text-xl font-medium leading-relaxed">
-                I don&apos;t just build websites; I engineer data-driven experiences. With a solid foundation in Statistics and a passion for modern web technologies, my work sits at the intersection of logical performance and visual storytelling. Whether it&apos;s analyzing complex datasets or building high-performance web apps, I focus on precision and efficiency.
+                I don&apos;t just build websites; I engineer data-driven experiences. With a solid foundation in Statistics and a passion for modern web technologies, my work sits at the intersection of logical performance and visual storytelling.
               </TextReveal>
               <TextReveal className="text-gray-300 text-lg leading-relaxed">
                 Every project is a unique challenge to push the boundaries of what&apos;s possible in the browser, focusing on speed, accessibility, and high-fidelity motion.
