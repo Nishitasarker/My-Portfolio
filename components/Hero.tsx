@@ -2,28 +2,29 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Variants } from 'framer-motion';
 import { motion } from "framer-motion";
 import { FaLinkedinIn, FaGithub, FaEnvelope } from "react-icons/fa6"; 
 
 const Hero = () => {
-  // টেক্সট ও এলিমেন্টগুলোর স্মুথ এন্ট্রেন্স ভ্যারিয়েন্ট
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 25 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] } 
-    }
-  };
+ 
+  const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 25 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] } 
+  }
+};
 
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 }
-    }
-  };
-
+// staggerContainer টিকেও Variants টাইপ দিন
+const staggerContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }
+  }
+};
   return (
     <main className="min-h-screen flex items-center pt-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 w-full py-12 md:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
