@@ -125,7 +125,7 @@ const Hero = () => {
            >
              <div className="relative overflow-hidden rounded-xl bg-gray-900 h-[450px] w-[320px] md:h-[550px] md:w-[400px]">
                <Image
-                 src="/portfolio,image.png" 
+                 src="/portfolio-image.png" 
                  alt="Nishita Sarker Portrait"
                  width={800}
                  height={600}
