@@ -61,7 +61,7 @@ const About = () => {
             
             <div className="space-y-8">
               <TextReveal className="text-gray-300 text-xl font-medium leading-relaxed">
-                I don&apos;t  just build websites; I engineer data-driven experiences. With a solid foundation in Statistics and a passion for modern web technologies, my work sits at the intersection of logical performance and visual storytelling. Whether it's analyzing complex datasets or building high-performance web apps, I focus on precision and efficiency.
+                I don&apos;t just build websites; I engineer data-driven experiences. With a solid foundation in Statistics and a passion for modern web technologies, my work sits at the intersection of logical performance and visual storytelling. Whether it&apos;s analyzing complex datasets or building high-performance web apps, I focus on precision and efficiency.
               </TextReveal>
               <TextReveal className="text-gray-300 text-lg leading-relaxed">
                 Every project is a unique challenge to push the boundaries of what&apos;s possible in the browser, focusing on speed, accessibility, and high-fidelity motion.
@@ -74,10 +74,22 @@ const About = () => {
             
             <div className="space-y-20">
               {[
-                {  title: "Conceptual Design", desc: "Mastering the art of building responsive layouts using HTML, CSS, and modern design principles."},
-                {  title: "Advanced Development", desc: "Developing dynamic full-stack applications using React, Next.js, and Java, with a focus on seamless user experiences."},
-                {  title: "DATA ECOSYSTEMS", desc:"Leveraging MongoDB, SQL, and MS Access for robust data management, while performing deep analytical research using Stata and SPSS."}
-              ].map((item, i) => (
+                { 
+                  year: "Phase 01", 
+                  title: "Conceptual Design", 
+                  desc: "Mastering the art of building responsive layouts using HTML, CSS, and modern design principles."
+                },
+                { 
+                  year: "Phase 02", 
+                  title: "Advanced Development", 
+                  desc: "Developing dynamic full-stack applications using React, Next.js, and Java, with a focus on seamless user experiences."
+                },
+                { 
+                  year: "Phase 03", 
+                  title: "DATA ECOSYSTEMS", 
+                  desc: "Leveraging MongoDB, SQL, and MS Access for robust data management, while performing deep analytical research using Stata and SPSS."
+                }
+              ].map((item: { year: string; title: string; desc: string }, i) => (
                 <div key={i} className="timeline-item relative">
                   <div className="absolute -left-[53px] top-2 w-2.5 h-2.5 rounded-full bg-brand-purple shadow-[0_0_15px_rgba(123,97,255,1)]" />
                   <div className="space-y-2">
