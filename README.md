@@ -1,96 +1,78 @@
-# 🌐 Modern Full-Stack Portfolio Website
+# 🚀 My Portfolio - Web Developer & Statistician
 
-Welcome to my personal portfolio repository! This is a cutting-edge, high-performance web application designed to showcase my skills, projects, and expertise as a **Full-Stack Web Developer** and **Data Analyst**. Built with modern technologies like **Next.js**, **React**, and **MongoDB**, it features premium UI/UX designs, fluid physics-based animations, and smooth responsiveness.
-
-Live Demo: [your-portfolio-link.vercel.app](https://my-portfolio-six-ashen-rohyxjkk3k.vercel.app) *(Replace with your actual live link)*
+Welcome to my professional portfolio! This project showcases my journey as a **Full-Stack Web Developer** with a solid foundation in **Statistical Analysis**. I bridge the gap between data-driven insights and interactive web experiences.
 
 ---
 
-## 🚀 Key Focus Areas
-
-- **Frontend Excellence:** Specialized in crafting pixel-perfect, highly responsive User Interfaces (UI) using Next.js and Tailwind CSS, enriched with framer-motion physics for a tactile desktop experience.
-- **Robust Backend & Databases:** Experienced in building secure, structured, and fast APIs, integrating database management systems like MongoDB, and keeping security at the forefront.
-- **Data-Driven Approach:** Combining full-stack engineering with data analysis to bridge the gap between elegant interface design and clean, statistical backend modeling.
+## 🌐 Live Demo
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=google-chrome&logoColor=white)](https://my-portfolio-six-ashen-rohyxjkk3k.vercel.app) 
 
 ---
 
-## 🛠️ Tech Stack & Features
+## 👤 About Me
+I am a passionate **Web Developer** dedicated to building responsive, user-friendly applications. With my background as a **Statistician**, I bring a unique analytical perspective to coding, ensuring that performance and data integrity are always optimized.
 
-### **Frontend & UI/UX**
-* **Framework:** Next.js (App Router, Server Components)
-* **Library:** React.js
-* **Styling:** Tailwind CSS (Modern Dark-Neutral Palette)
-* **Animations:** Framer Motion (Fluid custom transitions & Staggered layouts)
-* **Interactions:** Custom `Magnetic` effects for icons and interactive call-to-actions
-* **Icons:** Lucide React & React Icons
-
-### **Backend & Data**
-* **Database:** MongoDB (Efficient schema design and management)
-* **API Routing:** Next.js Serverless Route Handlers
-* **Optimization:** SEO friendly architecture, semantic HTML, and smart image caching
+- 🔭 I’m currently focusing on advanced **Web Development** (React & Next.js).
+- 📊 I specialize in **Statistical Modeling** and Data Interpretation.
+- ⚡ Fun fact: I love solving complex mathematical problems as much as I love debugging code.
 
 ---
 
-## 📂 Project Structure Highlights
+## 🛠️ Tech Stack & Tools
 
-A look into how the project is organized to remain scalable and modular:
+### 💻 Web Development
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
-```text
-├── components/
-│   ├── animations/     # Custom animation hooks like Magnetic.tsx
-│   ├── ui/             # Reusable UI component elements
-│   └── Footer.tsx      # Optimized modern footer with smooth interactions
-├── app/
-│   ├── layout.tsx      # Main wrapper & global styling configs
-│   ├── page.tsx        # Main homepage landing screen
-│   └── globals.css     # Centralized Tailwind CSS declarations
-├── public/             # Static assets (images, custom SVGs)
-└── package.json        # Dependencies & script setups
+### 📊 Data Science & Statistics
+![Stata](https://img.shields.io/badge/Stata-0A4A73?style=for-the-badge&logo=stata&logoColor=white)
+![SPSS](https://img.shields.io/badge/IBM%20SPSS-Target-red?style=for-the-badge&logo=ibm&logoColor=white)
+![Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
+![MS Access](https://img.shields.io/badge/Microsoft_Access-A33338?style=for-the-badge&logo=microsoft-access&logoColor=white)
+![Statistics](https://img.shields.io/badge/Statistics-Expert-blue?style=for-the-badge&logo=google-sheets&logoColor=white)
 
-🏎️ Getting Started Locally
-Follow these steps to set up and run the portfolio website on your local machine:
+### ⚙️ Other Tools
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
-1. Prerequisites
-Ensure you have Node.js (v18.x or later) and npm/yarn installed.
+---
 
-2. Clone the Repository
-Bash
-git clone [https://github.com/Nishitasarker/My-Portfolio.git](https://github.com/Nishitasarker/My-Portfolio.git)
-cd My-Portfolio
-3. Install Dependencies
-Bash
-npm install
-# or
-yarn install
-4. Setup Environment Variables
-Create a .env.local file in the root directory and add your secret keys (e.g., MongoDB URI, Email Service configurations):
+## 🏗️ Key Features
+- **Responsive Design:** Optimized for all screen sizes using Tailwind CSS.
+- **Modern UI:** Clean and professional look with a custom color palette.
+- **Dynamic Content:** Showcasing projects and skills dynamically.
+- **SEO Friendly:** Built with best practices for web visibility.
 
-Code snippet
-MONGODB_URI=your_mongodb_connection_string
-NEXT_PUBLIC_APP_URL=http://localhost:3000
-5. Run the Development Server
-Bash
-npm run dev
-# or
-yarn dev
-Open http://localhost:3000 in your browser to see your local instance up and running.
+---
 
-📈 Optimization & Bug Fixes Included
-Cubic Bezier Custom Easing: Fully optimized animations by switching invalid easing properties to raw bezier vectors [0.16, 1, 0.3, 1] for ultra-smooth performance.
+## 🤝 Connect With Me
 
-Scroll Offset Calculations: Enhanced layout wrappers using relative bounding boxes to eliminate browser console scroll calculation warnings.
+Feel free to reach out for collaborations or just a friendly chat!
 
-Type Inference: Code rewritten cleanly without intrusive : any typings to assure smooth compilation during production deployments on platforms like Vercel.
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nishitasarker2005)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/8801750691825)
+[![Email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nishitasarkerjui@gmail.com)
 
-📬 Connect With Me
-Let's collaborate on building innovative web solutions or analyzing complex data patterns!
+---
 
-LinkedIn: @NishitaSarker
+## 📝 How to run this project locally
 
-GitHub: @Nishitasarker
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/Nishitasarker/My-Portfolio.git](https://github.com/Nishitasarker/My-Portfolio.git)
 
-WhatsApp: +8801750691825
+ 2. Navigate to the folder:
 
-Email: nishitasarkerjui@gmail.com
+                   Bash
+                   cd My-Portfolio
+3.  Setup & Run:
 
-Developed with 💜 by Nishi.
+                 Bash
+                npm install
+                 npm run dev
+
+❤️ Developed by Nishita Sarker  
