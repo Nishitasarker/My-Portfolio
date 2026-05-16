@@ -16,7 +16,7 @@ const Hero = () => {
       y: 0, 
       transition: { 
         duration: 0.8, 
-        ease: [0.25, 1, 0.5, 1] as any // টাইপস্ক্রিপ্ট এরর এড়াতে as any ব্যবহার
+        ease: ([0.25, 1, 0.5, 1] as any) // টাইপস্ক্রিপ্ট এরর এড়াতে as any ব্যবহার
       } 
     }
   };

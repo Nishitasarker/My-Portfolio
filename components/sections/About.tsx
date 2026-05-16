@@ -22,7 +22,7 @@ const About = () => {
     const ctx = gsap.context(() => {
       gsap.from(".timeline-item", {
         opacity: 0,
-        x: (i: number) => (i % 2 === 0 ? -50 : 50),
+        x: (i: any) => (i % 2 === 0 ? -50 : 50),
         stagger: 0.2,
         duration: 1,
         ease: "expo.out",

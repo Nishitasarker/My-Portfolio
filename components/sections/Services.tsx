@@ -56,100 +56,74 @@ const technologies = [
   },
 ];
 
-
-
 export default function Services() {
   const containerRef = useRef<HTMLElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     ScrollTrigger.refresh();
     const ctx = gsap.context(() => {
-
       // Staggered Tech Cards Entrance
-     gsap.from(".tech-card", {
-      opacity: 0,
-      y: 40,
-      stagger: 0.1,
-      duration: 1,
-      ease: "expo.out",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 85%", // একটু নিচে নামিয়ে দিলাম যাতে তাড়াতাড়ি ট্রিগার হয়
-        toggleActions: "play none none none", // শুধু একবার প্লে হবে
-        once: true,
+      gsap.from(".tech-card", {
+        opacity: 0,
+        y: 40,
+        stagger: 0.1,
+        duration: 1,
+        ease: "expo.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
         },
       });
-
-      // Animated Stats Counting
-      const statsElements = statsRef.current?.querySelectorAll(".stat-value");
-      statsElements?.forEach((el, i) => {
-        const target = Stats[i].value;
-        gsap.to(el, {
-          innerText: target,
-          duration: 2.5,
-          snap: { innerText: 1 },
-          scrollTrigger: {
-            trigger: statsRef.current,
-            start: "top 85%",
-          },
-        });
-      });
     }, containerRef);
-    window.addEventListener("load", () => ScrollTrigger.refresh());
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={containerRef} id="services" className="pt-32 pb-10 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto font-hanken">
-      {/* Section Header */}
+    <section ref={containerRef} id="services" className="pt-32 pb-10 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto">
       <header className="text-center mb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-portfolioAccent font-black uppercase tracking-[0.4em] text-lg mb-6"
+          className="text-brand-purple font-black uppercase tracking-[0.4em] text-xs mb-6"
         >
           Capabilities
         </motion.div>
         <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-8">
           Skills & <span className="text-glow-purple italic text-brand-purple">Technologies</span>
         </h2>
-        <p className="text-gray-300 max-w-2xl mx-auto text-xl font-bold">
-          I work with modern tools and technologies to build fast, scalable and efficient web applications.
+        <p className="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
+          I work with modern tools and technologies to build fast, scalable, and efficient web applications.
         </p>
       </header>
 
-      {/* Tech Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {technologies.map((tech, i) => (
           <Magnetic key={i}>
-            <article className="tech-card glass-card rounded-2xl p-10 flex flex-col items-center text-center group hover:bg-white/[0.05] border border-white/5 hover:border-portfolioAccent/30 transition-all duration-500">
+            <article className="tech-card bg-white/[0.02] backdrop-blur-sm rounded-2xl p-10 flex flex-col items-center text-center group hover:bg-white/[0.05] border border-white/5 hover:border-brand-purple/30 transition-all duration-500">
               <div className="mb-8 h-20 w-20 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
                 {tech.icon}
               </div>
-              <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight text-white group-hover:text-portfolioAccent transition-colors">
+              <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight text-white group-hover:text-brand-purple transition-colors">
                 {tech.name}
               </h3>
-              <p className="text-gray-300 text-sm leading-relaxed font-bold">
+              <p className="text-gray-400 text-sm leading-relaxed">
                 {tech.desc}
               </p>
               
-              {/* Decorative Accent */}
               <motion.div 
                 initial={{ width: 0 }}
                 whileInView={{ width: 40 }}
-                className="mt-8 h-1 bg-portfolioAccent rounded-full"
+                className="mt-8 h-1 bg-brand-purple rounded-full"
               />
             </article>
           </Magnetic>
         ))}
       </div>
-
-      {/* Divider */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-32" />
-
-     
+      
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mt-32" />
     </section>
   );
 }

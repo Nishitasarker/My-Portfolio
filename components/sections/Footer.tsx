@@ -37,13 +37,18 @@ export default function Footer() {
   ];
 
   // Animation Variants
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-     transition: { duration: 0.8, ease: "easeOut" }    }
-  };
+  const fadeInUp: any = { // এখানে : any যোগ করুন
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { 
+      duration: 0.6, 
+      ease: "expoOut" as any // অথবা এখানে as any দিন
+    }
+  }
+};
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -56,14 +61,19 @@ export default function Footer() {
     }
   };
 
-  const iconVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: { 
-      scale: 1, 
-      opacity: 1, 
-      transition: { type: "spring", stiffness: 260, damping: 20 } 
-    }
-  };
+  const iconVariants: any = { // এখানে : any যোগ করুন
+  hidden: { scale: 0, opacity: 0 },
+  visible: { 
+    scale: 1, 
+    opacity: 1, 
+    transition: { 
+      type: "spring" as any, // এখানে as any দিন
+      stiffness: 300, 
+      damping: 20 
+    } 
+  }
+};
+
 
   return (
     <footer className="py-20 px-6 md:px-12 lg:px-24 border-t border-gray-400 relative overflow-hidden">
@@ -136,7 +146,8 @@ export default function Footer() {
               <div className="w-12 h-12 rounded-full border border-brand-purple flex items-center justify-center group-hover:bg-brand-purple group-hover:text-white transition-all overflow-hidden">
                 <motion.div
                   animate={{ y: [0, -4, 0] }}
-                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" 
+  } as any }
                 >
                   <ArrowUp size={20} />
                 </motion.div>
@@ -157,7 +168,7 @@ export default function Footer() {
           repeat: Infinity,
           duration: 4,
           ease: "easeInOut"
-        }}
+        }as any}
       />
     </footer>
   );

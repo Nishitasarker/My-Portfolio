@@ -49,7 +49,7 @@ export default function Contact() {
     )
     .then(() => {
       setFormState("success");
-      formRef.current?.reset(); 
+      (formRef.current as HTMLFormElement).reset();
       setTimeout(() => setFormState("idle"), 4000);
     })
     .catch((error) => {
