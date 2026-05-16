@@ -8,6 +8,13 @@ import TextReveal from "@/components/animations/TextReveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// ডাটা আইটেমের জন্য একটি ইন্টারফেস তৈরি করা হলো যাতে টাইপ এরর না আসে
+interface TimelineItemType {
+  year: string;
+  title: string;
+  desc: string;
+}
+
 const About = () => {
   const containerRef = useRef<HTMLElement>(null);
 
@@ -41,6 +48,24 @@ const About = () => {
     return () => ctx.revert();
   }, []);
 
+  const timelineData: TimelineItemType[] = [
+    { 
+      year: "Phase 01", 
+      title: "Conceptual Design", 
+      desc: "Mastering the art of building responsive layouts using HTML, CSS, and modern design principles."
+    },
+    { 
+      year: "Phase 02", 
+      title: "Advanced Development", 
+      desc: "Developing dynamic full-stack applications using React, Next.js, and Java, with a focus on seamless user experiences."
+    },
+    { 
+      year: "Phase 03", 
+      title: "DATA ECOSYSTEMS", 
+      desc: "Leveraging MongoDB, SQL, and MS Access for robust data management, while performing deep analytical research using Stata and SPSS."
+    }
+  ];
+
   return (
     <section id="about" ref={containerRef} className="py-32 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
@@ -73,23 +98,7 @@ const About = () => {
             <div className="timeline-line absolute left-0 top-0 w-px h-full bg-gradient-to-b from-brand-purple via-brand-purple/20 to-transparent origin-top" />
             
             <div className="space-y-20">
-              {[
-                { 
-                  year: "Phase 01", 
-                  title: "Conceptual Design", 
-                  desc: "Mastering the art of building responsive layouts using HTML, CSS, and modern design principles."
-                },
-                { 
-                  year: "Phase 02", 
-                  title: "Advanced Development", 
-                  desc: "Developing dynamic full-stack applications using React, Next.js, and Java, with a focus on seamless user experiences."
-                },
-                { 
-                  year: "Phase 03", 
-                  title: "DATA ECOSYSTEMS", 
-                  desc: "Leveraging MongoDB, SQL, and MS Access for robust data management, while performing deep analytical research using Stata and SPSS."
-                }
-              ].map((item: { year: string; title: string; desc: string }, i) => (
+              {timelineData.map((item, i) => (
                 <div key={i} className="timeline-item relative">
                   <div className="absolute -left-[53px] top-2 w-2.5 h-2.5 rounded-full bg-brand-purple shadow-[0_0_15px_rgba(123,97,255,1)]" />
                   <div className="space-y-2">
