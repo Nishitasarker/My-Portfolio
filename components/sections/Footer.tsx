@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Variants } from 'framer-motion';
 import Link from "next/link";
-import { ArrowUp, Infinity } from "lucide-react"; 
+import { ArrowUp, Infinity as InfinityIcon } from "lucide-react"; 
 import { FaLinkedin, FaGithub, FaWhatsapp, FaEnvelope } from "react-icons/fa"; 
 import Magnetic from "@/components/animations/Magnetic";
 
@@ -37,17 +38,20 @@ export default function Footer() {
   ];
 
   // অ্যানিমেশন ভেরিয়েন্টস (কোনো টাইপ কাস্টিং বা ': any' ছাড়াই বিল্ড ফ্রেন্ডলি করা হয়েছে)
-  const fadeInUp = { 
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { 
-        duration: 0.6, 
-        ease: [0.16, 1, 0.3, 1] // 'expoOut' এর সঠিক কিউবিক বেজিয়ার বিকল্প
-      }
-    }
-  };
+ const fadeInUp: Variants = {
+  hidden: { 
+    opacity: 0, 
+    y: 20 
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: 0.6, 
+      ease: [0.6, -0.05, 0.01, 0.99] // এখন TypeScript কোনো ঝামেলা করবে না
+    } 
+  }
+};
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -60,18 +64,19 @@ export default function Footer() {
     }
   };
 
-  const iconVariants = { 
-    hidden: { scale: 0, opacity: 0 },
-    visible: { 
-      scale: 1, 
-      opacity: 1, 
-      transition: { 
-        type: "spring", 
-        stiffness: 260, 
-        damping: 20 
-      } 
-    }
-  };
+  
+  const iconVariants: Variants = { // এখানে : Variants যোগ করুন
+  hidden: { scale: 0, opacity: 0 },
+  visible: { 
+    scale: 1, 
+    opacity: 1, 
+    transition: { 
+      type: "spring", // এখন TypeScript বুঝবে এটা নির্দিষ্ট spring অ্যানিমেশনই
+      stiffness: 260,
+      damping: 20
+    } 
+  }
+};
 
   return (
     // কাস্টমাইজেশন: bg-neutral-900 (প্রিমিয়াম গ্রে ব্যাকগ্রাউন্ড) এবং ম্যাচিং বর্ডার
@@ -93,7 +98,7 @@ export default function Footer() {
           >
             <Link href="/" className="flex items-center gap-3 group">
               <div className="w-12 h-12 flex items-center justify-center bg-brand-muted rounded-xl transition-transform duration-700 group-hover:rotate-[360deg]">
-                <Infinity size={24} className="text-white" />
+                <InfinityIcon size={24} className="text-white" />
               </div>
               <span className="text-3xl font-black tracking-tighter uppercase text-white">Nishi</span>
             </Link>
@@ -150,11 +155,14 @@ export default function Footer() {
               <span>Back to Top</span>
               <div className="w-12 h-12 rounded-full border border-brand-purple/30 flex items-center justify-center group-hover:bg-brand-purple group-hover:border-brand-purple group-hover:text-white transition-all overflow-hidden">
                 <motion.div
-                  animate={{ y: [0, -4, 0] }}
-                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                >
-                  <ArrowUp size={20} />
-                </motion.div>
+                   animate={{ y: [0, -4, 0] } as const} // <-- এখানেও as const দিন
+              transition={{  repeat: Infinity, 
+                       duration: 2, 
+                        ease: "easeInOut" 
+                          }}
+>
+  <ArrowUp size={20} />
+</motion.div>
               </div>
             </button>
           </Magnetic>

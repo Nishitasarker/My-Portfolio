@@ -5,7 +5,7 @@ Welcome to my professional portfolio! This project showcases my journey as a **F
 ---
 
 ## 🌐 Live Demo
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=google-chrome&logoColor=white)](https://my-portfolio-six-ashen-rohyxjkk3k.vercel.app) 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=google-chrome&logoColor=white)](https://nishitasarker.github.io/My-Portfolio/) 
 
 ---
 
@@ -34,6 +34,7 @@ I am a passionate **Web Developer** dedicated to building responsive, user-frien
 ![Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
 ![MS Access](https://img.shields.io/badge/Microsoft_Access-A33338?style=for-the-badge&logo=microsoft-access&logoColor=white)
 ![Statistics](https://img.shields.io/badge/Statistics-Expert-blue?style=for-the-badge&logo=google-sheets&logoColor=white)
+
 
 ### ⚙️ Other Tools
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
@@ -67,12 +68,12 @@ Feel free to reach out for collaborations or just a friendly chat!
 
  2. Navigate to the folder:
 
-                   Bash
-                   cd My-Portfolio
-3.  Setup & Run:
+Bash
+cd My-Portfolio
+Setup & Run:
 
-                 Bash
-                npm install
-                 npm run dev
+3. Bash
+npm install
+npm run dev
 
-❤️ Developed by Nishita Sarker  
+⭐️ Developed by Nishita Sarker  
