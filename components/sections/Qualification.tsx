@@ -22,7 +22,7 @@ const education: JourneyItem[] = [
 ];
 
 const experience: JourneyItem[] = [
-  { title: "Full Stack Developer", company: "Programming Hero", year: "2026 - Present", desc: "Building high-performance web applications using MERN stack and Next.js." },
+  { title: "MERN Stack Developer (In Training) ", company: "Programming Hero", year: "2026 - Present", desc: "Building modern web apps while learning full-stack development." },
   { title: "Junior Data Analyst", company: "BRUR Projects", year: "2024 - Present", desc: "Transforming raw data into meaningful business insights through statistical analysis." }
 ];
 
@@ -66,21 +66,21 @@ const JourneyCard = ({ item, index, type }: { item: JourneyItem; index: number; 
           <div className="p-2 bg-brand-purple/10 rounded-lg group-hover:rotate-[360deg] transition-transform duration-700">
             <Calendar size={14} />
           </div>
-          <span className="text-[10px] font-black uppercase tracking-[0.2em]">{item.year}</span>
+          <span className="text-[12px] font-black uppercase tracking-[0.2em]">{item.year}</span>
         </div>
 
-        <h4 className="text-2xl font-bold text-white mb-2 uppercase tracking-tight group-hover:text-brand-purple transition-colors duration-300">
+        <h4 className="text-3xl font-bold text-white mb-2 uppercase tracking-tight group-hover:text-brand-purple transition-colors duration-300">
           {item.title}
         </h4>
         
         <div className="flex items-center gap-2 mb-6">
             <div className="w-8 h-[1px] bg-brand-purple/50 group-hover:w-12 transition-all duration-500" />
-            <p className="text-brand-purple font-bold text-sm uppercase tracking-wider">
+            <p className="text-brand-purple font-bold text-lg uppercase tracking-wider">
                 {item.school || item.company}
             </p>
         </div>
 
-        <p className="text-gray-400 leading-relaxed font-medium text-sm md:text-base group-hover:text-gray-200 transition-colors">
+        <p className="text-gray-300 leading-relaxed font-bold text-base md:text-base group-hover:text-gray-200 transition-colors">
           {item.desc}
         </p>
       </div>

@@ -32,7 +32,7 @@ const Navbar = () => {
         scrolled ? "bg-white/90 dark:bg-[#0d0d0d]/90" : "bg-transparent"
       } `}
     >
-      <div className="max-w-7xl mx-20 py-3 px-6 h-full flex items-center justify-between">
+      <div className="max-w-7xl mx-auto py-3 px-6 h-full flex flex-col lg:flex-row items-center lg:justify-between">
         
         {/* Logo Section - মাউস নিলে ঘুরবে */}
         <Link href="/" className="flex items-center gap-2 group">
@@ -58,9 +58,7 @@ const Navbar = () => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button className="lg:hidden text-white">
-          <i className="fa-solid fa-bars-staggered text-2xl"></i>
-        </button>
+        
       </div>
     </header>
   );
