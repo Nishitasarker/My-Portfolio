@@ -9,7 +9,8 @@ import {
   Database, 
   DatabaseZap, 
   Table, 
-  BarChart3, 
+  BarChart3,
+  Server, 
   PieChart, 
   FileJson,
   LucideIcon 
@@ -28,11 +29,12 @@ const skills: Skill[] = [
   { name: "React", icon: Code2, mastery: 95, color: "purple" },
   { name: "Next.js", icon: Globe, mastery: 90, color: "indigo" },
   { name: "Node.js", icon: Zap, mastery: 85, color: "cyan" },
+  { name: "Express.js", icon: Server, mastery: 85, color: "cyan" },
   
   // Database
   { name: "MongoDB", icon: DatabaseZap, mastery: 80, color: "purple" },
   { name: "SQL", icon: Database, mastery: 88, color: "indigo" },
-  { name: "MS Access", icon: Table, mastery: 85, color: "cyan" },
+
   
   // Statistical Tools
   { name: "Stata", icon: BarChart3, mastery: 82, color: "purple" },

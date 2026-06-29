@@ -14,6 +14,7 @@ import {
   Table, 
   BarChart3, 
   PieChart, 
+  Server,
   DatabaseZap,
   LucideIcon 
 } from "lucide-react";
@@ -31,6 +32,7 @@ const skills: Skill[] = [
   { name: "React", icon: Code2, mastery: 95, color: "blue" },
   { name: "Next.js", icon: Globe, mastery: 90, color: "purple" },
   { name: "Node.js", icon: Zap, mastery: 85, color: "green" },
+  { name: "Express.js", icon: Server, mastery: 88, color: "purple" },
   
   // ডেটাবেজ স্কিলস
   { name: "MongoDB", icon: DatabaseZap, mastery: 80, color: "green" },

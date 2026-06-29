@@ -36,6 +36,15 @@ const technologies = [
     icon: <div className="border-4 border-blue-500 text-blue-500 font-bold text-xl px-2 py-1 rounded-lg">US</div>,
   },
   {
+    name: "Express.js",
+    desc: "Building fast, unopinionated, and minimalist web frameworks for Node.js backends.",
+    icon: (
+      <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
+      </svg>
+    ),
+  },
+  {
     name: "MongoDB",
     desc: "Managing NoSQL databases with flexible schemas for high-performance data storage.",
     icon: (
@@ -44,11 +53,7 @@ const technologies = [
       </svg>
     ),
   },
-  {
-    name: "HTML",
-    desc: "Creating clean, well-structured page layouts with semantic markup for better accessibility and SEO.",
-    icon: <div className="border-4 border-blue-400 text-blue-400 font-black text-2xl w-12 h-12 flex items-center justify-center rounded">5</div>,
-  },
+  
 ];
 
 // Framer Motion এর জন্য এনিমেশন ভ্যারিয়েন্ট কনফিগারেশন
