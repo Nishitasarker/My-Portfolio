@@ -34,7 +34,8 @@ const projects: Project[] = [
     btnIcon: Rocket,
     liveLink: "https://recipe-hub-one-peach.vercel.app",
     githubLink: "https://github.com/Nishitasarker/RecipeHub" 
-  {
+  },
+    {
     title: "Qurbani Nexus App",
     category: "Fullstack • 2026",
     image: "/AnimalsProject.png",
