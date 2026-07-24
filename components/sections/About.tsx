@@ -52,12 +52,12 @@ const About = () => {
     { 
       year: "Phase 01", 
       title: "Full-Stack Web Core", 
-      desc: "Started coding in January 2026 and quickly grew passionate about building full-stack web applications using Next.js, React, Node.js, Express.js, and MongoDB."
+      desc: "Started coding in January 2026 and quickly grew passionate about building full-stack web applications using Next.js, React, Node.js, Express.js, TypeScript, JavaScript and MongoDB."
     },
     { 
       year: "Phase 02", 
       title: "Analytical Edge", 
-      desc: "Pursuing B.Sc. in Statistics and Data Science at Begum Rokeya University (Session 2024-25). Leveraging Stata, SPSS, Excel, and Access to build data-driven web apps."
+      desc: "Pursuing B.Sc. in Statistics and Data Science at Begum Rokeya University (Session 2024-25). Leveraging Stata, SPSS, SQL, Excel, and Access to build data-driven web apps."
     },
     { 
       year: "Phase 03", 
@@ -92,7 +92,7 @@ const About = () => {
               </TextReveal>
               
               <TextReveal className="text-gray-300 text-lg leading-relaxed">
-                Currently studying Statistics and Data Science at Begum Rokeya University (Session 2024-25), I combine analytical precision with modern web technologies (TypeScript, Next.js, Node.js, MongoDB) and data tools (Stata, SPSS, Excel) to engineer intelligent full-stack solutions.
+                Currently studying Statistics and Data Science at Begum Rokeya University (Session 2024-25), I combine analytical precision with modern web technologies ( Next.js, React, Node.js, Express.js, MongoDB, TypeScript, JavaScript) and data tools (Stata, SPSS, SQL) to engineer intelligent full-stack solutions.
               </TextReveal>
 
               <TextReveal className="text-gray-300 text-lg leading-relaxed">

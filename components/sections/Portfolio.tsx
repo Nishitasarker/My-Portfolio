@@ -5,81 +5,13 @@ import { motion, useScroll, useTransform, useSpring, useMotionValue } from "fram
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { Rocket, ShoppingCart, Bot, Activity, Code, ChevronLeft, ChevronRight, LucideIcon } from "lucide-react";
+import Link from "next/link";
+import { Rocket, Code, ChevronLeft, ChevronRight } from "lucide-react";
 import Magnetic from "@/components/animations/Magnetic";
 import { useTilt } from "@/hooks/use-tilt";
+import { projects, Project } from "@/data/projects"; // Data ফাইল থেকে ইমপোর্ট করা হচ্ছে
 
 gsap.registerPlugin(ScrollTrigger);
-
-interface Project {
-  title: string;
-  category: string;
-  image: string;
-  tags: string[];
-  icon: LucideIcon;
-  btnLabel: string;
-  btnIcon: LucideIcon;
-  liveLink: string;  
-  githubLink: string;
-}
-
-const projects: Project[] = [
-  {
-    title: "RecipeHub — Recipe Sharing Platform",
-    category: "Fullstack • 2026",
-    image: "/RecipeHub.png", 
-    tags: ["Next.js","Node.js", "Express.js", "Better-Auth", "MongoDB", "Stripe", "Tailwind CSS", "Framer Motion"],
-    icon: Rocket,
-    btnLabel: "Live Demo",
-    btnIcon: Rocket,
-    liveLink: "https://recipe-hub-one-peach.vercel.app",
-    githubLink: "https://github.com/Nishitasarker/RecipeHub" 
-  },
-    {
-    title: "Qurbani Nexus App",
-    category: "Fullstack • 2026",
-    image: "/AnimalsProject.png",
-    tags: ["Next.js","JavaScript (ES6+)","Tailwind CSS","Better-Auth","Google OAuth","MongoDB", "React.js"],
-    icon: Rocket,
-    btnLabel: "Live Demo",
-    btnIcon: Rocket,
-    liveLink: "https://qurbani-haat-two.vercel.app",
-    githubLink: "https://github.com/Nishitasarker/QurbaniHaat"
-  },
-  {
-    title: "KeenKeeper: Personal Relationship Manager",
-    category: "Social CRM Platform • 2026",
-    image: "/KeenKeeper.png",
-    tags: ["Next.js","JavaScript (ES6+)","DaisyUI", "Tailwind CSS", "Recharts"],
-    icon: ShoppingCart,
-    btnLabel: "Live Demo",
-    btnIcon: Rocket,
-    liveLink: "https://effervescent-jalebi-e2c324.netlify.app",
-    githubLink: "https://github.com/Nishitasarker/Next-Js-Project"
-  },
-  {
-    title: "OmniDesk Tools",
-    category: "All-in-One Digital Tool Suite",
-    image: "/Digitools.png",
-    tags: ["React.js", "Vite", "Tailwind CSS", "DaisyUI", "JavaScript (ES6+)","React Router DOM"],
-    icon: Bot,
-    btnLabel: "Live Demo",
-    btnIcon: Rocket,
-    liveLink: "https://fancy-tiramisu-290684.netlify.app",
-    githubLink: "https://github.com/Nishitasarker/Digitools-platform"
-  },
-  {
-    title: "DevFlow Tracker",
-    category: "Project Management Tool",
-    image: "/Github.png",
-    tags: ["HTML5 & CSS3", "Tailwind CSS", "JavaScript", "DaisyUI"],
-    icon: Activity,
-    btnLabel: "Live Demo",
-    btnIcon: Rocket,
-    liveLink: "https://nishitasarker.github.io/json-assignment/", 
-    githubLink: "https://github.com/Nishitasarker/json-assignment" 
-  },
-];
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   const { tilt, onMouseMove, onMouseLeave } = useTilt(8);
@@ -173,17 +105,18 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           </div>
 
           <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-auto">
+            {/* View Details Page Link */}
             <Magnetic>
-              <a 
-                href={project.liveLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <Link 
+                href={`/projects/${project.id}`} 
                 className="bg-brand-purple text-white text-[13px] font-black uppercase tracking-widest px-6 py-3 rounded-xl flex items-center gap-2 hover:bg-brand-purple/80 transition-all active:scale-95"
               >
-                <project.btnIcon size={16} />
-                {project.btnLabel}
-              </a>
+                <Rocket size={16} />
+                View Details
+              </Link>
             </Magnetic>
+
+            {/* GitHub Link */}
             <Magnetic>
               <a 
                 href={project.githubLink} 
@@ -240,66 +173,69 @@ export default function Portfolio() {
           >
             Recent <br /> <span className="text-brand-purple text-glow-purple italic">Projects</span>
           </motion.h2>
-          <p className="font-medium text-gray-400 text-xl max-w-2xl leading-relaxed">
+          <p className="font-medium text-gray-400 text-xl max-w-2xl leading-relaxed mt-4">
             A selection of my latest MERN stack projects, focusing on scalable architecture, seamless user experiences, and modern web standards.
           </p>
         </div>
 
-        <div key={currentPage} className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32">
+        <div key={currentPage} className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32 mt-16">
           {/* বাম কলাম */}
           <motion.div style={{ y: leftColY }} className="space-y-12">
             {leftColumnProjects.map((project, idx) => (
-              <ProjectCard key={project.title} project={project} index={idx * 2} />
+              <ProjectCard key={project.id} project={project} index={idx * 2} />
             ))}
           </motion.div>
 
           {/* ডান কলাম */}
           <motion.div style={{ y: rightColY }} className="space-y-12 mt-20 lg:mt-32">
             {rightColumnProjects.map((project, idx) => (
-              <ProjectCard key={project.title} project={project} index={idx * 2 + 1} />
+              <ProjectCard key={project.id} project={project} index={idx * 2 + 1} />
             ))}
           </motion.div>
         </div>
 
-        <div className="flex justify-center items-center gap-8">
-          <Magnetic>
-            <button 
-              onClick={handlePrevPage}
-              disabled={currentPage === 1}
-              className={`w-16 h-16 flex items-center justify-center rounded-full glass-card border-white/5 transition-all duration-300 ${
-                currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:border-brand-purple hover:bg-brand-purple/10'
-              }`}
-            >
-              <ChevronLeft size={28} />
-            </button>
-          </Magnetic>
-
-          <div className="flex gap-4">
-            {Array.from({ length: totalPages }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrentPage(i + 1)}
-                className={`w-2 h-2 rounded-full transition-all duration-500 ${
-                  currentPage === i + 1 
-                    ? 'bg-brand-purple w-6 shadow-[0_0_10px_rgba(123,97,255,0.8)]' 
-                    : 'bg-white/10 hover:bg-white/30'
+        {/* পেজিনেশন কন্ট্রোল */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-8">
+            <Magnetic>
+              <button 
+                onClick={handlePrevPage}
+                disabled={currentPage === 1}
+                className={`w-16 h-16 flex items-center justify-center rounded-full glass-card border-white/5 transition-all duration-300 ${
+                  currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:border-brand-purple hover:bg-brand-purple/10'
                 }`}
-              />
-            ))}
-          </div>
+              >
+                <ChevronLeft size={28} />
+              </button>
+            </Magnetic>
 
-          <Magnetic>
-            <button 
-              onClick={handleNextPage}
-              disabled={currentPage === totalPages}
-              className={`w-16 h-16 flex items-center justify-center rounded-full glass-card border-white/5 transition-all duration-300 ${
-                currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:border-brand-purple hover:bg-brand-purple/10'
-              }`}
-            >
-              <ChevronRight size={28} />
-            </button>
-          </Magnetic>
-        </div>
+            <div className="flex gap-4">
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentPage(i + 1)}
+                  className={`w-2 h-2 rounded-full transition-all duration-500 ${
+                    currentPage === i + 1 
+                      ? 'bg-brand-purple w-6 shadow-[0_0_10px_rgba(123,97,255,0.8)]' 
+                      : 'bg-white/10 hover:bg-white/30'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <Magnetic>
+              <button 
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+                className={`w-16 h-16 flex items-center justify-center rounded-full glass-card border-white/5 transition-all duration-300 ${
+                  currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:border-brand-purple hover:bg-brand-purple/10'
+                }`}
+              >
+                <ChevronRight size={28} />
+              </button>
+            </Magnetic>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -77,6 +77,24 @@ const technologies = [
       </div>
     ),
   },
+  {
+    name: "Tailwind CSS",
+    desc: "Crafting modern, highly responsive, and pixel-perfect user interfaces with utility-first CSS.",
+    icon: (
+      <svg className="w-12 h-12 text-sky-400" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.336 6.182 14.975 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.335 13.382 8.974 12 6.001 12z" />
+      </svg>
+    ),
+  },
+  {
+    name: "HTML5",
+    desc: "Structuring semantic, accessible, and SEO-optimized web content for modern browsers.",
+    icon: (
+      <svg className="w-12 h-12 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M1.5 0h21l-1.91 21.563L11.97 24 2.41 21.563zm17.03 5.063H5.323l.312 3.516h11.968l-.422 4.703-5.18 1.391-5.188-1.391-.328-3.687H2.984l.594 6.75 8.39 2.313 8.39-2.313z" />
+      </svg>
+    ),
+  },
 ];
 
 // Framer Motion এর জন্য এনিমেশন ভ্যারিয়েন্ট কনফিগারেশন

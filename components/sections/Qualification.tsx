@@ -26,7 +26,7 @@ const education: EducationItem[] = [
   },
   { 
     title: "Higher Secondary Certificate (HSC)", 
-    school: "Govt. Science College, Dhaka", 
+    school: "Pirgachha Government College, Rangpur", 
     year: "2021 - 2023", 
     desc: "Completed core Science background with a strong academic concentration on Physics, Higher Mathematics, and Chemistry.",
     achievement: "Science Stream"
