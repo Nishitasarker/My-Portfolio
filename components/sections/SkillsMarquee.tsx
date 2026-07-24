@@ -15,6 +15,7 @@ import {
   BarChart3, 
   PieChart, 
   Server,
+  FileCode2,
   DatabaseZap,
   LucideIcon 
 } from "lucide-react";
@@ -28,12 +29,13 @@ interface Skill {
 
 const skills: Skill[] = [
   // ওয়েব ডেভেলপমেন্ট স্কিলস
-  { name: "JavaScript", icon: FileJson, mastery: 92, color: "orange" },
-  { name: "React", icon: Code2, mastery: 95, color: "blue" },
-  { name: "Next.js", icon: Globe, mastery: 90, color: "purple" },
-  { name: "Node.js", icon: Zap, mastery: 85, color: "green" },
+   { name: "Next.js", icon: Globe, mastery: 90, color: "purple" },
+{ name: "React", icon: Code2, mastery: 95, color: "blue" },
+   { name: "Node.js", icon: Zap, mastery: 85, color: "green" },
   { name: "Express.js", icon: Server, mastery: 88, color: "purple" },
-  
+  { name: "TypeScript", icon: FileCode2, mastery: 88, color: "blue" },
+  { name: "JavaScript", icon: FileJson, mastery: 92, color: "orange" },
+    
   // ডেটাবেজ স্কিলস
   { name: "MongoDB", icon: DatabaseZap, mastery: 80, color: "green" },
   { name: "SQL", icon: Database, mastery: 88, color: "blue" },

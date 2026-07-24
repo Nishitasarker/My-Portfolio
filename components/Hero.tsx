@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Variants } from 'framer-motion';
 import { motion } from "framer-motion";
-import { FaLinkedinIn, FaGithub, FaEnvelope } from "react-icons/fa6"; 
+import { FaLinkedinIn, FaGithub, FaFacebookF, FaDownload } from "react-icons/fa6"; 
 
 const Hero = () => {
   
-  // fadeInUp ভ্যারিয়েন্ট - টাইপ সেফ করা হয়েছে
+  // fadeInUp ভ্যারিয়েন্ট - টাইপ সেফ করা হয়েছে
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 25 },
     visible: { 
@@ -16,12 +16,12 @@ const Hero = () => {
       y: 0, 
       transition: { 
         duration: 0.8, 
-        ease: ([0.25, 1, 0.5, 1] as any) // টাইপস্ক্রিপ্ট এরর এড়াতে as any ব্যবহার
+        ease: ([0.25, 1, 0.5, 1] as any)
       } 
     }
   };
 
-  // staggerContainer ভ্যারিয়েন্ট
+  // staggerContainer ভ্যারিয়েন্ট
   const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -62,51 +62,68 @@ const Hero = () => {
               variants={fadeInUp}
               className="text-gray-300 text-lg leading-relaxed max-w-xl"
             >
-              Specializing in building modern, responsive web applications with JavaScript, React and Next.js. 
-              Combining the precision of Statistics with the creativity of web development to create data-driven user experiences.
+              Full-Stack Web Developer specializing in TypeScript, Next.js, React, Node.js, Express.js, and MongoDB.
+              Combining statistical analytical precision with modern web development to build scalable, data-driven applications.
             </motion.p>
           </div>
 
-          {/* Social Links Section */}
+          {/* Action & Social Links Section */}
           <motion.div 
             variants={fadeInUp}
             className="space-y-6 pt-8 border-t border-white/10"
           >
-            <p className="text-xl font-semibold uppercase tracking-widest text-gray-100">
-              Find me on
-            </p>
-            <div className="flex items-center gap-4">
-              {[
-                { 
-                  icon: <FaLinkedinIn />, 
-                  href: "https://www.linkedin.com/in/nishitasarker2005" 
-                },
-                { 
-                  icon: <FaGithub />, 
-                  href: "https://github.com/Nishitasarker" 
-                },
-                { 
-                  icon: <FaEnvelope />, 
-                  href: "mailto:nishitasarkerjui@gmail.com",
-                  isEmail: true 
-                },
-              ].map((social, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ y: -5, scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                >
-                  <Link
-                    href={social.href}
-                    target={social.isEmail ? "_self" : "_blank"}
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 shadow-xl hover:shadow-brand-purple/20 transition-all text-xl text-gray-300 hover:text-brand-purple"
+            {/* Resume Download Button (Requirement 3) */}
+            <div className="flex flex-wrap items-center gap-4">
+              <motion.a
+                href="/resume.pdf" // public ফোল্ডারে আপনার resume.pdf ফাইলটি রাখবেন (অথবা ড্রাইভের লিংক দিবেন)
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-purple text-white font-semibold shadow-lg hover:shadow-brand-purple/40 hover:bg-opacity-90 transition-all cursor-pointer"
+              >
+                <FaDownload className="text-lg" />
+                Download Resume
+              </motion.a>
+            </div>
+
+            {/* Social Links */}
+            <div className="space-y-3 pt-2">
+              <p className="text-sm font-semibold uppercase tracking-widest text-gray-400">
+                Find me on
+              </p>
+              <div className="flex items-center gap-4">
+                {[
+                  { 
+                    icon: <FaLinkedinIn />, 
+                    href: "https://www.linkedin.com/in/nishitasarker2005" 
+                  },
+                  { 
+                    icon: <FaGithub />, 
+                    href: "https://github.com/Nishitasarker" 
+                  },
+                  { 
+                    icon: <FaFacebookF />, 
+                    href: "https://www.facebook.com/puja.sarker.602565" 
+                  },
+                ].map((social, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ y: -5, scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
                   >
-                    {social.icon}
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 shadow-xl hover:shadow-brand-purple/20 transition-all text-xl text-gray-300 hover:text-brand-purple"
+                    >
+                      {social.icon}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </motion.div>

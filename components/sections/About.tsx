@@ -1,14 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextReveal from "@/components/animations/TextReveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// ডাটা আইটেমের জন্য টাইপ ডিফাইন করা
 interface TimelineItemType {
   year: string;
   title: string;
@@ -48,29 +47,31 @@ const About = () => {
     return () => ctx.revert();
   }, []);
 
-  // ডাটা লিস্ট যাতে 'year' প্রোপার্টি আছে
+  // Full-Stack Focus timeline data
   const timelineData: TimelineItemType[] = [
     { 
       year: "Phase 01", 
-      title: "Conceptual Design", 
-      desc: "Mastering the art of building responsive layouts using HTML, CSS, and modern design principles."
+      title: "Full-Stack Web Core", 
+      desc: "Started coding in January 2026 and quickly grew passionate about building full-stack web applications using Next.js, React, Node.js, Express.js, and MongoDB."
     },
     { 
       year: "Phase 02", 
-      title: "Advanced Development", 
-      desc: "Developing dynamic full-stack applications using React, Next.js, and Java, with a focus on seamless user experiences."
+      title: "Analytical Edge", 
+      desc: "Pursuing B.Sc. in Statistics and Data Science at Begum Rokeya University (Session 2024-25). Leveraging Stata, SPSS, Excel, and Access to build data-driven web apps."
     },
     { 
       year: "Phase 03", 
-      title: "DATA ECOSYSTEMS", 
-      desc: "Leveraging MongoDB, SQL, and MS Access for robust data management, while performing deep analytical research using Stata and SPSS."
+      title: "Creative Balance", 
+      desc: "Passionate dancer outside the terminal. Dancing brings rhythm, creativity, and fresh focus to my daily coding and web architecture problem-solving."
     }
   ];
 
   return (
-    <section id="about"  ref={containerRef} className="py-32 px-6 md:px-12 lg:px-24">
+    <section id="about" ref={containerRef} className="py-32 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+          
+          {/* Left Content Column */}
           <div className="space-y-12">
             <header className="space-y-6">
               <motion.div
@@ -78,23 +79,29 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="text-brand-purple font-black uppercase tracking-[0.4em] text-xs"
               >
-                Philosophy & Vision
+                Get To Know Me
               </motion.div>
               <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
-                Crafting <span className="text-glow-purple">Digital</span> <br /> Masterpieces
+                Building <span className="text-glow-purple">Scalable</span> <br /> Web Applications
               </h2>
             </header>
             
             <div className="space-y-8">
               <TextReveal className="text-gray-300 text-xl font-medium leading-relaxed">
-                I don&apos;t just build websites; I engineer data-driven experiences. With a solid foundation in Statistics and a passion for modern web technologies, my work sits at the intersection of logical performance and visual storytelling.
+                My web development journey began in January 2026. As a dedicated Full-Stack Developer, I love taking ideas from scratch and turning them into seamless, high-performance web applications that users enjoy interacting with.
               </TextReveal>
+              
               <TextReveal className="text-gray-300 text-lg leading-relaxed">
-                Every project is a unique challenge to push the boundaries of what&apos;s possible in the browser, focusing on speed, accessibility, and high-fidelity motion.
+                Currently studying Statistics and Data Science at Begum Rokeya University (Session 2024-25), I combine analytical precision with modern web technologies (TypeScript, Next.js, Node.js, MongoDB) and data tools (Stata, SPSS, Excel) to engineer intelligent full-stack solutions.
+              </TextReveal>
+
+              <TextReveal className="text-gray-300 text-lg leading-relaxed">
+                Beyond coding and data structures, I am an enthusiastic dancer. Expressing rhythm through dance keeps me creative, energetic, and inspired to solve complex software problems with an open mind.
               </TextReveal>
             </div>
           </div>
 
+          {/* Right Timeline Column */}
           <div className="timeline-container relative pl-12 py-10">
             <div className="timeline-line absolute left-0 top-0 w-px h-full bg-gradient-to-b from-brand-purple via-brand-purple/20 to-transparent origin-top" />
             
@@ -111,6 +118,7 @@ const About = () => {
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>

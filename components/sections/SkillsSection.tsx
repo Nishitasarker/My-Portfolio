@@ -13,6 +13,8 @@ import {
   Server, 
   PieChart, 
   FileJson,
+  FileCode2,        // TypeScript এর আইকন
+  FileSpreadsheet,  // MS Excel এর আইকন
   LucideIcon 
 } from "lucide-react";
 
@@ -24,27 +26,24 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  // Web Development
-  { name: "JavaScript", icon: FileJson, mastery: 92, color: "cyan" },
-  { name: "React", icon: Code2, mastery: 95, color: "purple" },
+  // আপনার নির্দিষ্ট করা ক্রমানুসারে (Sequence)
   { name: "Next.js", icon: Globe, mastery: 90, color: "indigo" },
+  { name: "React.js", icon: Code2, mastery: 95, color: "purple" },
   { name: "Node.js", icon: Zap, mastery: 85, color: "cyan" },
   { name: "Express.js", icon: Server, mastery: 85, color: "cyan" },
-  
-  // Database
+  { name: "TypeScript", icon: FileCode2, mastery: 88, color: "indigo" },
+  { name: "JavaScript", icon: FileJson, mastery: 92, color: "cyan" },
   { name: "MongoDB", icon: DatabaseZap, mastery: 80, color: "purple" },
   { name: "SQL", icon: Database, mastery: 88, color: "indigo" },
-
-  
-  // Statistical Tools
   { name: "Stata", icon: BarChart3, mastery: 82, color: "purple" },
   { name: "SPSS", icon: PieChart, mastery: 80, color: "indigo" },
+  { name: "Excel", icon: FileSpreadsheet, mastery: 90, color: "cyan" },
+  { name: "Access", icon: Table, mastery: 85, color: "purple" },
 ];
 
 const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
   const { tilt, onMouseMove, onMouseLeave } = useTilt(15);
 
-  // Portfolio এর কালার প্যালেট অনুযায়ী ম্যাপিং
   const colorClasses = {
     purple: "hover:border-brand-purple bg-brand-purple/10 text-brand-purple",
     cyan: "hover:border-cyan-400 bg-cyan-400/10 text-cyan-400",
@@ -62,7 +61,7 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
+      transition={{ delay: index * 0.08 }}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
       style={{
@@ -89,7 +88,7 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: `${skill.mastery}%` }}
-            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 + 0.5 }}
+            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: index * 0.08 + 0.3 }}
             className={`h-full ${barColors[skill.color]}`}
           />
         </div>
@@ -101,7 +100,6 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
 const SkillsSection = () => {
   return (
     <section id="digitools" className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-[#0f172a]">
-      {/* Portfolio এর মতো একই ব্যাকগ্রাউন্ড গ্লো */}
       <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-purple/10 blur-[120px] rounded-full" />
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-brand-purple/5 blur-[100px] rounded-full" />
 

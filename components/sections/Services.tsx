@@ -5,18 +5,20 @@ import Magnetic from "@/components/animations/Magnetic";
 
 const technologies = [
   {
-    name: "Tailwind CSS",
-    desc: "Creating responsive, modern, and clean layouts quickly using utility-first styling.",
+    name: "Next.js",
+    desc: "Building fast, SEO-friendly, and production-ready full-stack applications with Server Components and App Router.",
     icon: (
-      <svg className="w-12 h-12 text-sky-400" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8 1.2.3 2.1 1.2 3 2.1 1.6 1.6 3.4 3.5 6.8 3.5 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.9-.2-1.5-.9-2.2-1.5-.9-.9-1.8-1.8-3.6-2.1-.5-.1-1-.2-1.5-.2h-.5zM6 12.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8 1.2.3 2.1 1.2 3 2.1 1.6 1.6 3.4 3.5 6.8 3.5 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.9-.2-1.5-.9-2.2-1.5-.9-.9-1.8-1.8-3.6-2.1-.5-.1-1-.2-1.5-.2h-.5z" />
+      <svg className="w-12 h-12 text-white" viewBox="0 0 180 180" fill="none">
+        <mask id="mask0_next" maskUnits="userSpaceOnUse" x="0" y="0" width="180" height="180" style={{ maskType: "alpha" }}>
+          <circle cx="90" cy="90" r="90" fill="black" />
+        </mask>
+        <g mask="url(#mask0_next)">
+          <circle cx="90" cy="90" r="90" fill="black" />
+          <path d="M149.508 157.52L69.142 54H54V125.97H66.8136V69.7128L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z" fill="white" />
+          <rect x="115" y="54" width="12" height="72" fill="white" />
+        </g>
       </svg>
     ),
-  },
-  {
-    name: "JavaScript",
-    desc: "Writing efficient, modern, and optimized code for both frontend and backend logic.",
-    icon: <div className="bg-[#F7DF1E] text-black font-bold text-3xl w-12 h-12 flex items-center justify-center rounded">JS</div>,
   },
   {
     name: "React",
@@ -33,7 +35,11 @@ const technologies = [
   {
     name: "Node.js",
     desc: "Developing scalable backend logic and high-performance server-side applications.",
-    icon: <div className="border-4 border-blue-500 text-blue-500 font-bold text-xl px-2 py-1 rounded-lg">US</div>,
+    icon: (
+      <svg className="w-12 h-12 text-green-500" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L2 7.5v9L12 22l10-5.5v-9L12 2zm0 2.311l7.15 3.932v.002L12 12.18 4.85 8.245V8.24L12 4.311zM4.35 9.973L11.25 13.76v7.351L4.35 17.322V9.973zm15.3 0v7.349l-6.9 3.789V13.76l6.9-3.787z"/>
+      </svg>
+    ),
   },
   {
     name: "Express.js",
@@ -48,12 +54,29 @@ const technologies = [
     name: "MongoDB",
     desc: "Managing NoSQL databases with flexible schemas for high-performance data storage.",
     icon: (
-      <svg className="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-        <path d="M4 7v10c0 1.66 3.58 3 8 3s8-1.34 8-3V7M4 7c0 1.66 3.58 3 8 3s8-1.34 8-3M4 7c0-1.66 3.58-3 8-3s8 1.34 8 3m-16 5c0 1.66 3.58 3 8 3s8-1.34 8-3" />
+      <svg className="w-12 h-12 text-emerald-500" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C11.5 2 11 2.5 11 3v2.1C8 6.2 6 8.9 6 12c0 3.3 2.7 6 6 6s6-2.7 6-6c0-3.1-2-5.8-5-6.9V3c0-.5-.5-1-1-1zm0 5.1c2.3.5 4 2.5 4 4.9 0 2.8-2.2 5-5 5s-5-2.2-5-5c0-2.4 1.7-4.4 4-4.9V12c0 .6.4 1 1 1s1-.4 1-1V7.1z"/>
       </svg>
     ),
   },
-  
+  {
+    name: "TypeScript",
+    desc: "Writing strongly typed, maintainable, and robust code to prevent runtime bugs.",
+    icon: (
+      <div className="bg-[#3178C6] text-white font-bold text-2xl w-12 h-12 flex items-center justify-center rounded">
+        TS
+      </div>
+    ),
+  },
+  {
+    name: "JavaScript",
+    desc: "Writing efficient, modern, and optimized code for both frontend and backend logic.",
+    icon: (
+      <div className="bg-[#F7DF1E] text-black font-bold text-3xl w-12 h-12 flex items-center justify-center rounded">
+        JS
+      </div>
+    ),
+  },
 ];
 
 // Framer Motion এর জন্য এনিমেশন ভ্যারিয়েন্ট কনফিগারেশন
@@ -62,7 +85,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1, // প্রতিটি কার্ড একের পর এক আসবে (Stagger effect)
+      staggerChildren: 0.1,
     },
   },
 };
@@ -74,7 +97,7 @@ const cardVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.16, 1, 0.3, 1] as const, // expo.out এর সমতুল্য কাস্টম বেজিয়ার কার্ভ
+      ease: [0.16, 1, 0.3, 1] as const,
     },
   },
 };
@@ -99,7 +122,6 @@ export default function Services() {
         </p>
       </header>
 
-      {/* কন্টেইনারে অ্যানিমেশন কন্ট্রোল যোগ করা হয়েছে */}
       <motion.div 
         variants={containerVariants}
         initial="hidden"
@@ -109,7 +131,6 @@ export default function Services() {
       >
         {technologies.map((tech, i) => (
           <Magnetic key={i}>
-            {/* প্রতিটি কার্ডকে motion.article বানানো হয়েছে */}
             <motion.article 
               variants={cardVariants}
               className="tech-card bg-white/[0.02] backdrop-blur-sm rounded-2xl p-10 flex flex-col items-center text-center group hover:bg-white/[0.05] border border-white/5 hover:border-brand-purple/30 transition-all duration-500"
