@@ -63,22 +63,22 @@ const EducationCard = ({ item, index }: { item: EducationItem; index: number }) 
     <motion.div 
       ref={cardRef}
       whileHover={{ y: -8 }}
-      className="group relative bg-white/5 backdrop-blur-md p-8 md:p-10 border border-white/5 hover:border-brand-purple/40 transition-all duration-500 rounded-[2rem] overflow-hidden"
+      className="group relative bg-white/5 backdrop-blur-md p-8 md:p-10 border border-white/5 hover:border-cyan-400/40 transition-all duration-500 rounded-[2rem] overflow-hidden"
     >
       {/* Background Animated Glow */}
-      <div className="absolute -right-10 -top-10 w-32 h-32 bg-brand-purple/10 blur-3xl group-hover:bg-brand-purple/30 transition-all duration-700 rounded-full" />
+      <div className="absolute -right-10 -top-10 w-32 h-32 bg-cyan-400/10 blur-3xl group-hover:bg-cyan-400/30 transition-all duration-700 rounded-full" />
       
       <div className="relative z-10 space-y-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-3 text-brand-purple">
-            <div className="p-2 bg-brand-purple/10 rounded-lg group-hover:rotate-[360deg] transition-transform duration-700">
+          <div className="flex items-center gap-3 text-cyan-400">
+            <div className="p-2 bg-cyan-400/10 rounded-lg group-hover:rotate-[360deg] transition-transform duration-700">
               <Calendar size={16} />
             </div>
             <span className="text-xs font-black uppercase tracking-[0.2em]">{item.year}</span>
           </div>
 
           {item.achievement && (
-            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-purple/10 text-brand-purple text-xs font-bold border border-brand-purple/20">
+            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-400/10 text-cyan-400 text-xs font-bold border border-cyan-400/20">
               <Award size={14} />
               <span>{item.achievement}</span>
             </div>
@@ -86,10 +86,10 @@ const EducationCard = ({ item, index }: { item: EducationItem; index: number }) 
         </div>
 
         <div>
-          <h4 className="text-2xl md:text-3xl font-bold text-white mb-2 uppercase tracking-tight group-hover:text-brand-purple transition-colors duration-300">
+          <h4 className="text-2xl md:text-3xl font-bold text-white mb-2 uppercase tracking-tight group-hover:text-cyan-400 transition-colors duration-300">
             {item.title}
           </h4>
-          <p className="text-brand-purple/90 font-bold text-lg uppercase tracking-wider">
+          <p className="text-cyan-400/90 font-bold text-lg uppercase tracking-wider">
             {item.school}
           </p>
         </div>
@@ -101,7 +101,7 @@ const EducationCard = ({ item, index }: { item: EducationItem; index: number }) 
 
       {/* Decorative Star with Pulse Effect */}
       <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-40 group-hover:scale-125 transition-all duration-500">
-        <Star className="text-brand-purple fill-brand-purple" size={30} />
+        <Star className="text-cyan-400 fill-cyan-400" size={30} />
       </div>
     </motion.div>
   );
@@ -121,7 +121,7 @@ const EducationalQualification = () => {
             opacity: [0.2, 0.4, 0.2] 
         }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="absolute top-1/4 -left-20 w-96 h-96 bg-brand-purple/20 blur-[120px] rounded-full pointer-events-none" 
+        className="absolute top-1/4 -left-20 w-96 h-96 bg-cyan-400/20 blur-[120px] rounded-full pointer-events-none" 
       />
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -131,7 +131,7 @@ const EducationalQualification = () => {
             initial={{ opacity: 0, letterSpacing: "0.2em" }}
             whileInView={{ opacity: 1, letterSpacing: "0.5em" }}
             viewport={{ once: true }}
-            className="text-brand-purple font-black uppercase text-xs block"
+            className="text-cyan-400 font-black uppercase text-xs block"
           >
             Academic Background
           </motion.div>
@@ -144,13 +144,13 @@ const EducationalQualification = () => {
             className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]"
           >
             Educational <br />
-            <span className="text-glow-purple italic text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-purple-400 to-indigo-400">
+            <span className="text-glow-cyan italic text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400">
               Qualification
             </span>
           </motion.h2>
 
           <div className="flex items-center justify-center gap-3 pt-4">
-            <div className="p-3 bg-brand-purple text-white rounded-2xl shadow-[0_10px_30px_rgba(123,97,255,0.3)]">
+            <div className="p-3 bg-cyan-400 text-slate-950 rounded-2xl shadow-[0_10px_30px_rgba(34,211,238,0.3)]">
               <GraduationCap size={28} strokeWidth={1.5} />
             </div>
           </div>

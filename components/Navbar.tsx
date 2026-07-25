@@ -21,10 +21,10 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "#hero", active: true },
+    { name: "Resume", href: "#hero" },
     { name: "About", href: "#about" },
     { name: "Tech Stack", href: "#digitools" },
     { name: "Skills", href: "#services" },
-    { name: "Resume", href: "#journey" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];

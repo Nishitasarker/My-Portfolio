@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Rocket, Code, ChevronLeft, ChevronRight } from "lucide-react";
 import Magnetic from "@/components/animations/Magnetic";
 import { useTilt } from "@/hooks/use-tilt";
-import { projects, Project } from "@/data/projects"; // Data ফাইল থেকে ইমপোর্ট করা হচ্ছে
+import { projects, Project } from "@/data/projects"; 
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,12 +68,13 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         animate={{ rotateX: tilt.x, rotateY: tilt.y }}
         className="glass-card rounded-3xl p-8 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden border border-white/10 transition-all duration-500 hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)]"
       >
+        {/* Glow Effect Updated to Cyan */}
         <motion.div 
           style={{ x: smoothX, y: smoothY }}
-          className="absolute w-64 h-64 bg-brand-purple/10 blur-3xl rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
+          className="absolute w-64 h-64 bg-cyan-400/10 blur-3xl rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
         />
 
-        <div className="relative w-48 h-48 shrink-0 overflow-hidden circular-mask border-2 border-white/10 group-hover:border-brand-purple/40 transition-colors">
+        <div className="relative w-48 h-48 shrink-0 overflow-hidden circular-mask border-2 border-white/10 group-hover:border-cyan-400/40 transition-colors">
           <motion.div 
             style={{ x: imgX, y: imgY, scale: 1.2 }}
             className="w-full h-full relative"
@@ -89,10 +90,10 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         </div>
 
         <div className="flex flex-col flex-grow text-center md:text-left z-10 font-hanken">
-          <span className="text-[15px] font-black uppercase tracking-[0.4em] text-brand-purple mb-2">
+          <span className="text-[15px] font-black uppercase tracking-[0.4em] text-cyan-400 mb-2">
             {project.category}
           </span>
-          <h3 className="text-xl font-black uppercase tracking-tighter mb-4 text-white group-hover:text-glow-purple transition-all">
+          <h3 className="text-xl font-black uppercase tracking-tighter mb-4 text-white group-hover:text-cyan-400 transition-all">
             {project.title}
           </h3>
           
@@ -105,11 +106,11 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           </div>
 
           <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-auto">
-            {/* View Details Page Link */}
+            {/* View Details Page Link (Updated to Cyan) */}
             <Magnetic>
               <Link 
                 href={`/projects/${project.id}`} 
-                className="bg-brand-purple text-white text-[13px] font-black uppercase tracking-widest px-6 py-3 rounded-xl flex items-center gap-2 hover:bg-brand-purple/80 transition-all active:scale-95"
+                className="bg-cyan-400 text-slate-950 text-[13px] font-black uppercase tracking-widest px-6 py-3 rounded-xl flex items-center gap-2 hover:bg-cyan-300 transition-all active:scale-95 shadow-[0_4px_20px_rgba(34,211,238,0.25)]"
               >
                 <Rocket size={16} />
                 View Details
@@ -122,7 +123,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                 href={project.githubLink} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white/60 text-[13px] font-black uppercase tracking-widest px-6 py-3 rounded-xl border border-white/10 flex items-center gap-2 hover:bg-white/5 transition-all active:scale-95"
+                className="text-white/80 text-[13px] font-black uppercase tracking-widest px-6 py-3 rounded-xl border border-white/10 flex items-center gap-2 hover:bg-white/10 hover:text-white transition-all active:scale-95"
               >
                 <Code size={16} />
                 GitHub
@@ -161,8 +162,9 @@ export default function Portfolio() {
 
   return (
     <section ref={containerRef} id="projects" className="py-32 px-6 md:px-12 lg:px-24 font-hanken relative overflow-hidden bg-[#0f172a]">
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-purple/10 blur-[120px] rounded-full" />
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-brand-purple/5 blur-[100px] rounded-full" />
+      {/* Background Orbs Updated to Cyan */}
+      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-cyan-400/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-cyan-400/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center md:text-left">
@@ -171,7 +173,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]"
           >
-            Recent <br /> <span className="text-brand-purple text-glow-purple italic">Projects</span>
+            Recent <br /> <span className="text-cyan-400 text-glow-cyan italic">Projects</span>
           </motion.h2>
           <p className="font-medium text-gray-400 text-xl max-w-2xl leading-relaxed mt-4">
             A selection of my latest MERN stack projects, focusing on scalable architecture, seamless user experiences, and modern web standards.
@@ -194,7 +196,7 @@ export default function Portfolio() {
           </motion.div>
         </div>
 
-        {/* পেজিনেশন কন্ট্রোল */}
+        {/* পেজিনেশন কন্ট্রোল (Updated to Cyan) */}
         {totalPages > 1 && (
           <div className="flex justify-center items-center gap-8">
             <Magnetic>
@@ -202,7 +204,7 @@ export default function Portfolio() {
                 onClick={handlePrevPage}
                 disabled={currentPage === 1}
                 className={`w-16 h-16 flex items-center justify-center rounded-full glass-card border-white/5 transition-all duration-300 ${
-                  currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:border-brand-purple hover:bg-brand-purple/10'
+                  currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:border-cyan-400 hover:bg-cyan-400/10 text-cyan-400'
                 }`}
               >
                 <ChevronLeft size={28} />
@@ -216,7 +218,7 @@ export default function Portfolio() {
                   onClick={() => setCurrentPage(i + 1)}
                   className={`w-2 h-2 rounded-full transition-all duration-500 ${
                     currentPage === i + 1 
-                      ? 'bg-brand-purple w-6 shadow-[0_0_10px_rgba(123,97,255,0.8)]' 
+                      ? 'bg-cyan-400 w-6 shadow-[0_0_10px_rgba(34,211,238,0.8)]' 
                       : 'bg-white/10 hover:bg-white/30'
                   }`}
                 />
@@ -228,7 +230,7 @@ export default function Portfolio() {
                 onClick={handleNextPage}
                 disabled={currentPage === totalPages}
                 className={`w-16 h-16 flex items-center justify-center rounded-full glass-card border-white/5 transition-all duration-300 ${
-                  currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:border-brand-purple hover:bg-brand-purple/10'
+                  currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:border-cyan-400 hover:bg-cyan-400/10 text-cyan-400'
                 }`}
               >
                 <ChevronRight size={28} />

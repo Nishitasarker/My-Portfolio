@@ -23,7 +23,7 @@ export default async function ProjectDetailsPage({ params }: PageProps) {
         {/* Back Button */}
         <Link 
           href="/#projects" 
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-brand-purple transition-colors font-bold text-sm uppercase tracking-wider"
+          className="inline-flex items-center gap-2 text-slate-400 hover:text-cyan-400 transition-colors font-bold text-sm uppercase tracking-wider"
         >
           <ArrowLeft size={18} />
           Back to Projects
@@ -31,7 +31,7 @@ export default async function ProjectDetailsPage({ params }: PageProps) {
 
         {/* Header */}
         <div className="space-y-4">
-          <span className="text-brand-purple font-black tracking-[0.3em] uppercase text-xs">
+          <span className="text-cyan-400 font-black tracking-[0.3em] uppercase text-xs">
             {project.category}
           </span>
           <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight">
@@ -55,7 +55,7 @@ export default async function ProjectDetailsPage({ params }: PageProps) {
           <div className="lg:col-span-2 space-y-10">
             {/* Description */}
             <div>
-              <h2 className="text-2xl font-bold uppercase mb-4 text-brand-purple">Overview</h2>
+              <h2 className="text-2xl font-bold uppercase mb-4 text-cyan-400">Overview</h2>
               <p className="text-slate-300 text-lg leading-relaxed font-medium">
                 {project.description}
               </p>
@@ -64,11 +64,11 @@ export default async function ProjectDetailsPage({ params }: PageProps) {
             {/* Key Features */}
             {project.features && project.features.length > 0 && (
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold uppercase text-brand-purple">Key Features</h2>
+                <h2 className="text-2xl font-bold uppercase text-cyan-400">Key Features</h2>
                 <ul className="space-y-3">
                   {project.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3 text-slate-300">
-                      <CheckCircle2 size={20} className="text-brand-purple shrink-0 mt-1" />
+                      <CheckCircle2 size={20} className="text-cyan-400 shrink-0 mt-1" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -138,7 +138,7 @@ export default async function ProjectDetailsPage({ params }: PageProps) {
                 href={project.liveLink} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-full bg-brand-purple hover:bg-brand-purple/80 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-all text-sm uppercase tracking-wider"
+                className="w-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-black py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-all text-sm uppercase tracking-wider shadow-[0_4px_20px_rgba(34,211,238,0.25)]"
               >
                 <ExternalLink size={18} />
                 Live Preview

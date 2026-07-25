@@ -16,7 +16,7 @@ const Hero = () => {
       y: 0, 
       transition: { 
         duration: 0.8, 
-        ease: ([0.25, 1, 0.5, 1] as any)
+        ease: [0.25, 1, 0.5, 1]
       } 
     }
   };
@@ -39,12 +39,12 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="lg:col-span-7 space-y-8"
+          className="lg:col-span-7 space-y-8 z-10"
         >
           <div className="space-y-4">
             <motion.p 
               variants={fadeInUp}
-              className="text-xs font-bold tracking-[0.2em] text-brand-purple text-glow-purple italic uppercase"
+              className="text-xs font-bold tracking-[0.2em] text-brand-cyan text-glow-cyan italic uppercase"
             >
               Welcome to my world
             </motion.p>
@@ -55,7 +55,7 @@ const Hero = () => {
             >
               I&apos;m <span>Nishita Sarker</span>
               <br />
-              <span className="text-brand-purple text-glow-purple italic">Developer & Statistician</span>
+              <span className="text-brand-cyan text-glow-cyan italic">Developer & Statistician</span>
             </motion.h1>
             
             <motion.p 
@@ -72,15 +72,15 @@ const Hero = () => {
             variants={fadeInUp}
             className="space-y-6 pt-8 border-t border-white/10"
           >
-            {/* Resume Download Button (Requirement 3) */}
+            {/* Resume Download Button */}
             <div className="flex flex-wrap items-center gap-4">
               <motion.a
-                href="/resume.pdf" // public ফোল্ডারে আপনার resume.pdf ফাইলটি রাখবেন (অথবা ড্রাইভের লিংক দিবেন)
+                href="/resume.pdf" // public ফোল্ডারে আপনার resume.pdf ফাইলটি রাখবেন
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-purple text-white font-semibold shadow-lg hover:shadow-brand-purple/40 hover:bg-opacity-90 transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-cyan text-slate-950 font-bold shadow-lg shadow-brand-cyan/20 hover:bg-brand-teal transition-all cursor-pointer"
               >
                 <FaDownload className="text-lg" />
                 Download Resume
@@ -117,7 +117,7 @@ const Hero = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 shadow-xl hover:shadow-brand-purple/20 transition-all text-xl text-gray-300 hover:text-brand-purple"
+                      className="w-12 h-12 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 shadow-xl hover:border-brand-cyan/40 hover:shadow-brand-cyan/20 transition-all text-xl text-gray-300 hover:text-brand-cyan"
                     >
                       {social.icon}
                     </Link>
@@ -133,25 +133,26 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.2 }}
-          className="lg:col-span-5 flex justify-center lg:justify-end"
+          className="lg:col-span-5 flex justify-center lg:justify-end z-10"
         >
-           <motion.div 
-             animate={{ y: [0, -12, 0] }}
-             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-             className="relative group p-4 bg-[#1a1a1a] rounded-2xl shadow-2xl border border-white/10"
-           >
-             <div className="relative overflow-hidden rounded-xl bg-gray-900 h-[450px] w-[320px] md:h-[550px] md:w-[400px]">
-               <Image
-                 src="/portfolio-image.jpeg" 
-                 alt="Nishita Sarker Portrait"
-                 width={800}
-                 height={600}
-                 className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                 priority
-               />
-             </div>
-           </motion.div>
+          <motion.div 
+            animate={{ y: [0, -12, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="relative group p-4 bg-white/5 rounded-2xl shadow-2xl border border-white/10"
+          >
+            <div className="relative overflow-hidden rounded-xl bg-gray-900 h-[450px] w-[320px] md:h-[550px] md:w-[400px]">
+              <Image
+                src="/portfolio-image.jpeg" 
+                alt="Nishita Sarker Portrait"
+                width={800}
+                height={600}
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                priority
+              />
+            </div>
+          </motion.div>
         </motion.div>
+
       </div>
     </main>
   );
