@@ -31,7 +31,7 @@ export default function Footer() {
     },
     { 
       icon: <FaFacebook size={20} />, 
-      href: "https://www.facebook.com/puja.sarker.602565",
+      href: "https://www.facebook.com/100080777081861/posts/962049083164319/?substory_index=1745046966465629&app=fbl",
       label: "Facebook",
       isEmail: false,
       value: "https://www.facebook.com/puja.sarker.602565"
