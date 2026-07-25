@@ -18,19 +18,19 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
 
     // ২. বর্তমান দৃশ্যমান সেকশন ডিটেক্ট করার জন্য IntersectionObserver
-    const navLinks = [
+    const sectionsToObserve = [
       "hero",
       "about",
       "digitools",
       "services",
-      "Qualification",
+      "education", // ফিক্সড: "Qualification" বাদ দিয়ে "education" করা হয়েছে
       "projects",
       "contact",
     ];
 
     const observerOptions = {
       root: null,
-      rootMargin: "-20% 0px -60% 0px", // স্ক্রিনের মাঝে কোন সেকশনটি আছে তা সঠিক করার জন্য
+      rootMargin: "-20% 0px -60% 0px",
       threshold: 0,
     };
 
@@ -44,7 +44,7 @@ const Navbar = () => {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    navLinks.forEach((id) => {
+    sectionsToObserve.forEach((id) => {
       const element = document.getElementById(id);
       if (element) observer.observe(element);
     });
@@ -57,11 +57,11 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "#hero", id: "hero" },
-    { name: "Resume", href: "#hero", id: "resume-btn" }, // রেজুমি হিরো সেকশনেই যুক্ত
+    { name: "Resume", href: "#hero", id: "resume-btn" },
     { name: "About", href: "#about", id: "about" },
     { name: "Tech Stack", href: "#digitools", id: "digitools" },
     { name: "Skills", href: "#services", id: "services" },
-    { name: "Education", href: "#education", id: "Qualification" },
+    { name: "Education", href: "#education", id: "education" }, // ফিক্সড: href এবং id দুটোই "education" করা হয়েছে
     { name: "Projects", href: "#projects", id: "projects" },
     { name: "Contact", href: "#contact", id: "contact" },
   ];
