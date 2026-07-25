@@ -94,6 +94,13 @@ export default function Contact() {
                   href={info.href} 
                   target={info.isEmail ? undefined : "_blank"} 
                   rel={info.isEmail ? undefined : "noopener noreferrer"} 
+                  onClick={(e) => {
+                    if (info.isEmail) {
+                      e.preventDefault();
+                      navigator.clipboard.writeText(info.value);
+                      alert("Email address copied to clipboard!");
+                    }
+                  }}
                   className="contact-info-card block group"
                 >
                   <div className="bg-white/5 backdrop-blur-md p-6 flex items-center gap-6 border border-white/5 transition-all duration-500 hover:border-brand-teal hover:translate-x-2 rounded-3xl">

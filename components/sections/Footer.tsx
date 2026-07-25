@@ -19,31 +19,36 @@ export default function Footer() {
       icon: <FaLinkedin size={20} />, 
       href: "https://www.linkedin.com/in/nishitasarker2005", 
       label: "LinkedIn",
-      isEmail: false
+      isEmail: false,
+      value: "https://www.linkedin.com/in/nishitasarker2005"
     },
     { 
       icon: <FaGithub size={20} />, 
       href: "https://github.com/Nishitasarker", 
       label: "GitHub",
-      isEmail: false
+      isEmail: false,
+      value: "https://github.com/Nishitasarker"
     },
     { 
       icon: <FaFacebook size={20} />, 
       href: "https://www.facebook.com/puja.sarker.602565",
       label: "Facebook",
-      isEmail: false
+      isEmail: false,
+      value: "https://www.facebook.com/puja.sarker.602565"
     },
     { 
       icon: <FaEnvelope size={20} />, 
       href: "mailto:nishitasarkerjui@gmail.com",
       label: "Email",
-      isEmail: true
+      isEmail: true,
+      value: "nishitasarkerjui@gmail.com"
     },
     { 
       icon: <FaWhatsapp size={20} />, 
       href: "https://wa.me/8801750691825",
       label: "WhatsApp",
-      isEmail: false
+      isEmail: false,
+      value: "https://wa.me/8801750691825"
     },
   ];
 
@@ -130,6 +135,13 @@ export default function Footer() {
                       target={social.isEmail ? undefined : "_blank"}
                       rel={social.isEmail ? undefined : "noopener noreferrer"}
                       aria-label={social.label}
+                      onClick={(e) => {
+                        if (social.isEmail) {
+                          e.preventDefault();
+                          navigator.clipboard.writeText(social.value);
+                          alert("Email address copied to clipboard!");
+                        }
+                      }}
                       className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 shadow-xl backdrop-blur-sm transition-all text-gray-400 hover:text-cyan-400 hover:bg-cyan-400/10 hover:border-cyan-400/30 hover:-translate-y-1 text-xl"
                     >
                       {social.icon}

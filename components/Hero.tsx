@@ -30,6 +30,13 @@ const Hero = () => {
     }
   };
 
+  // ইমেইল ক্লিক হ্যান্ডলার - ক্লিপবোর্ডে কপি করার জন্য
+  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    navigator.clipboard.writeText("nishitasarkerjui@gmail.com");
+    alert("Email address copied to clipboard!");
+  };
+
   const socialLinks = [
     { 
       icon: <FaLinkedinIn />, 
@@ -138,6 +145,7 @@ const Hero = () => {
                       ) : (
                         <a
                           href={social.href}
+                          onClick={handleEmailClick}
                           className={linkClass}
                         >
                           {social.icon}
