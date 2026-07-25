@@ -11,13 +11,12 @@ import emailjs from "@emailjs/browser";
 gsap.registerPlugin(ScrollTrigger);
 
 const contactInfo = [
-  { label: "Email", value: "nishitasarkerjui@gmail.com", icon: Mail, href: "mailto:nishitasarkerjui@gmail.com" },
-  { label: "LinkedIn", value: "nishitasarker2005", icon: Link2, href: "https://www.linkedin.com/in/nishitasarker2005" },
-  { label: "WhatsApp", value: "+8801750-691825", icon: MessageSquare, href: "https://wa.me/8801750691825" },
+  { label: "Email", value: "nishitasarkerjui@gmail.com", icon: Mail, href: "mailto:nishitasarkerjui@gmail.com", isEmail: true },
+  { label: "LinkedIn", value: "nishitasarker2005", icon: Link2, href: "https://www.linkedin.com/in/nishitasarker2005", isEmail: false },
+  { label: "WhatsApp", value: "+8801750-691825", icon: MessageSquare, href: "https://wa.me/8801750691825", isEmail: false },
 ];
 
 export default function Contact() {
-  // useRef এ HTMLFormElement টাইপ যোগ করা হয়েছে যাতে reset() কাজ করে
   const containerRef = useRef<HTMLElement>(null);
   const formRef = useRef<HTMLFormElement>(null); 
   const [formState, setFormState] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -90,7 +89,13 @@ export default function Contact() {
 
             <div className="space-y-4">
               {contactInfo.map((info) => (
-                <a key={info.label} href={info.href} target="_blank" rel="noopener noreferrer" className="contact-info-card block group">
+                <a 
+                  key={info.label} 
+                  href={info.href} 
+                  target={info.isEmail ? undefined : "_blank"} 
+                  rel={info.isEmail ? undefined : "noopener noreferrer"} 
+                  className="contact-info-card block group"
+                >
                   <div className="bg-white/5 backdrop-blur-md p-6 flex items-center gap-6 border border-white/5 transition-all duration-500 hover:border-brand-teal hover:translate-x-2 rounded-3xl">
                     <div className="w-14 h-14 bg-brand-teal/10 rounded-2xl flex items-center justify-center transition-all group-hover:bg-brand-teal group-hover:text-brand-deep">
                       <info.icon size={24} strokeWidth={1.5} />

@@ -18,27 +18,32 @@ export default function Footer() {
     { 
       icon: <FaLinkedin size={20} />, 
       href: "https://www.linkedin.com/in/nishitasarker2005", 
-      label: "LinkedIn" 
+      label: "LinkedIn",
+      isEmail: false
     },
     { 
       icon: <FaGithub size={20} />, 
       href: "https://github.com/Nishitasarker", 
-      label: "GitHub" 
+      label: "GitHub",
+      isEmail: false
     },
     { 
       icon: <FaFacebook size={20} />, 
       href: "https://www.facebook.com/puja.sarker.602565",
-      label: "Facebook" 
+      label: "Facebook",
+      isEmail: false
     },
     { 
       icon: <FaEnvelope size={20} />, 
       href: "mailto:nishitasarkerjui@gmail.com",
-      label: "Email" 
+      label: "Email",
+      isEmail: true
     },
     { 
       icon: <FaWhatsapp size={20} />, 
       href: "https://wa.me/8801750691825",
-      label: "WhatsApp" 
+      label: "WhatsApp",
+      isEmail: false
     },
   ];
 
@@ -83,7 +88,6 @@ export default function Footer() {
   };
 
   return (
-    /* ব্যাকগ্রাউন্ড কালার পরিবর্তন: bg-[#0f172a] এবং border-slate-800/80 */
     <footer className="py-20 px-6 md:px-12 lg:px-24 bg-[#0f172a] border-t border-slate-800/80 relative overflow-hidden">
       <motion.div 
         className="max-w-7xl mx-auto relative" 
@@ -121,15 +125,15 @@ export default function Footer() {
               {socialLinks.map((social, index) => (
                 <Magnetic key={index}>
                   <motion.div variants={iconVariants}>
-                    <Link
+                    <a
                       href={social.href}
-                      target={social.label !== "Email" ? "_blank" : "_self"}
-                      rel="noopener noreferrer"
+                      target={social.isEmail ? undefined : "_blank"}
+                      rel={social.isEmail ? undefined : "noopener noreferrer"}
                       aria-label={social.label}
                       className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 shadow-xl backdrop-blur-sm transition-all text-gray-400 hover:text-cyan-400 hover:bg-cyan-400/10 hover:border-cyan-400/30 hover:-translate-y-1 text-xl"
                     >
                       {social.icon}
-                    </Link>
+                    </a>
                   </motion.div>
                 </Magnetic>
               ))}
@@ -154,7 +158,6 @@ export default function Footer() {
               className="group flex items-center gap-4 text-cyan-400 font-black uppercase tracking-widest text-xs"
             >
               <span>Back to Top</span>
-              {/* বাটন ব্যাকগ্রাউন্ড ও বর্ডার কালার সিয়ান করা হয়েছে */}
               <div className="w-12 h-12 rounded-full border border-cyan-400/30 flex items-center justify-center group-hover:bg-cyan-400 group-hover:border-cyan-400 group-hover:text-slate-950 transition-all overflow-hidden">
                 <motion.div
                   animate={{ y: [0, -4, 0] } as const}

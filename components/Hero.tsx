@@ -8,7 +8,7 @@ import { FaLinkedinIn, FaEnvelope, FaFacebookF, FaWhatsapp, FaDownload } from "r
 
 const Hero = () => {
   
-  // fadeInUp ভ্যারিয়েন্ট - টাইপ সেফ করা হয়েছে
+  // fadeInUp ভ্যারিয়েন্ট
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 25 },
     visible: { 
@@ -29,6 +29,29 @@ const Hero = () => {
       transition: { staggerChildren: 0.15 }
     }
   };
+
+  const socialLinks = [
+    { 
+      icon: <FaLinkedinIn />, 
+      href: "https://www.linkedin.com/in/nishitasarker2005",
+      isExternal: true 
+    },
+    { 
+      icon: <FaWhatsapp />, 
+      href: "https://wa.me/8801750691825",
+      isExternal: true 
+    },
+    { 
+      icon: <FaFacebookF />, 
+      href: "https://www.facebook.com/puja.sarker.602565",
+      isExternal: true 
+    },
+    { 
+      icon: <FaEnvelope />, 
+      href: "mailto:nishitasarkerjui@gmail.com",
+      isExternal: false
+    }
+  ];
 
   return (
     <main id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-brand-deep">
@@ -75,7 +98,7 @@ const Hero = () => {
             {/* Resume Download Button */}
             <div className="flex flex-wrap items-center gap-4">
               <motion.a
-                href="/resume.pdf" // public ফোল্ডারে আপনার resume.pdf ফাইলটি রাখবেন
+                href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
@@ -93,42 +116,36 @@ const Hero = () => {
                 Find me on
               </p>
               <div className="flex items-center gap-4">
-                {[
-                  { 
-                    icon: <FaLinkedinIn />, 
-                    href: "https://www.linkedin.com/in/nishitasarker2005" 
-                  },
-                  
-                   { 
-                    icon: <FaWhatsapp />, 
-                    href: "https://wa.me/8801750691825" 
-                  },
-                  { 
-                    icon: <FaFacebookF />, 
-                    href: "https://www.facebook.com/puja.sarker.602565" 
-                  },
-                  { 
-                  icon: <FaEnvelope />, 
-                   href: "mailto:nishitasarkerjui@gmail.com",
-                   isExternal: false
-                  }
-                ].map((social, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ y: -5, scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                  >
-                    <Link
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 shadow-xl hover:border-brand-cyan/40 hover:shadow-brand-cyan/20 transition-all text-xl text-gray-300 hover:text-brand-cyan"
+                {socialLinks.map((social, index) => {
+                  const linkClass = "w-12 h-12 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 shadow-xl hover:border-brand-cyan/40 hover:shadow-brand-cyan/20 transition-all text-xl text-gray-300 hover:text-brand-cyan";
+
+                  return (
+                    <motion.div
+                      key={index}
+                      whileHover={{ y: -5, scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 15 }}
                     >
-                      {social.icon}
-                    </Link>
-                  </motion.div>
-                ))}
+                      {social.isExternal ? (
+                        <Link
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={linkClass}
+                        >
+                          {social.icon}
+                        </Link>
+                      ) : (
+                        <a
+                          href={social.href}
+                          className={linkClass}
+                        >
+                          {social.icon}
+                        </a>
+                      )}
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           </motion.div>
