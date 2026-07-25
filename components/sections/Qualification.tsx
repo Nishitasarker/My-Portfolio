@@ -144,7 +144,7 @@ const EducationalQualification = () => {
             className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]"
           >
             Educational <br />
-            <span className="text-glow-cyan italic text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400">
+            <span className="text-brand-purple text-glow-purple italic">
               Qualification
             </span>
           </motion.h2>

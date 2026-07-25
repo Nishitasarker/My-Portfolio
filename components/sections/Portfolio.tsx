@@ -173,7 +173,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]"
           >
-            Recent <br /> <span className="text-cyan-400 text-glow-cyan italic">Projects</span>
+            Recent <br /> <span className="text-brand-purple text-glow-purple italic">Projects</span>
           </motion.h2>
           <p className="font-medium text-gray-400 text-xl max-w-2xl leading-relaxed mt-4">
             A selection of my latest MERN stack projects, focusing on scalable architecture, seamless user experiences, and modern web standards.

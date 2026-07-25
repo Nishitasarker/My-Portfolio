@@ -44,7 +44,7 @@ const Hero = () => {
           <div className="space-y-4">
             <motion.p 
               variants={fadeInUp}
-              className="text-xs font-bold tracking-[0.2em] text-brand-cyan text-glow-cyan italic uppercase"
+              className="text-xs font-bold tracking-[0.2em] text-brand-purple text-glow-purple italic uppercase"
             >
               Welcome to my world
             </motion.p>
@@ -55,7 +55,7 @@ const Hero = () => {
             >
               I&apos;m <span>Nishita Sarker</span>
               <br />
-              <span className="text-brand-cyan text-glow-cyan italic">Developer & Statistician</span>
+              <span className="text-brand-purple text-glow-purple italic">Developer & Statistician</span>
             </motion.h1>
             
             <motion.p 
@@ -80,7 +80,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-cyan text-slate-950 font-bold shadow-lg shadow-brand-cyan/20 hover:bg-brand-teal transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-brand-purple text-slate-950 font-bold shadow-lg shadow-brand-cyan/20 hover:bg-brand-teal transition-all cursor-pointer"
               >
                 <FaDownload className="text-lg" />
                 Download Resume
