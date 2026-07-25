@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <header
      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-white/5 ${
-        scrolled || isOpen ? "bg-white dark:bg-[#0d0d0d]" : "bg-transparent"
+        scrolled || isOpen ? "bg-[#093c5d]/90 backdrop-blur-md shadow-lg" : "bg-transparent"
       } `}
     >
       <div className="max-w-7xl mx-auto py-3 px-6 h-full flex  items-center justify-between">

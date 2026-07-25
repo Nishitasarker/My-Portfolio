@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Variants } from 'framer-motion';
 import { motion } from "framer-motion";
-import { FaLinkedinIn, FaGithub, FaFacebookF, FaDownload } from "react-icons/fa6"; 
+import { FaLinkedinIn, FaEnvelope, FaFacebookF, FaWhatsapp, FaDownload } from "react-icons/fa6"; 
 
 const Hero = () => {
   
@@ -80,7 +80,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-brand-purple text-slate-950 font-bold shadow-lg shadow-brand-cyan/20 hover:bg-brand-teal transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-teal text-brand-purple text-slate-950 font-bold shadow-lg shadow-brand-cyan/20 hover:bg-brand-teal transition-all cursor-pointer"
               >
                 <FaDownload className="text-lg" />
                 Download Resume
@@ -98,14 +98,20 @@ const Hero = () => {
                     icon: <FaLinkedinIn />, 
                     href: "https://www.linkedin.com/in/nishitasarker2005" 
                   },
-                  { 
-                    icon: <FaGithub />, 
-                    href: "https://github.com/Nishitasarker" 
+                  
+                   { 
+                    icon: <FaWhatsapp />, 
+                    href: "https://wa.me/8801750691825" 
                   },
                   { 
                     icon: <FaFacebookF />, 
                     href: "https://www.facebook.com/puja.sarker.602565" 
                   },
+                  { 
+                  icon: <FaEnvelope />, 
+                   href: "mailto:nishitasarkerjui@gmail.com",
+                   isExternal: false
+                  }
                 ].map((social, index) => (
                   <motion.div
                     key={index}
