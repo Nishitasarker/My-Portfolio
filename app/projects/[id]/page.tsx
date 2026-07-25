@@ -1,10 +1,8 @@
-// app/projects/[id]/page.tsx
-
 import { projects } from "@/data/projects";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ExternalLink, Code, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ExternalLink, Code, CheckCircle2, AlertTriangle, Lightbulb } from "lucide-react";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -15,7 +13,7 @@ export default async function ProjectDetailsPage({ params }: PageProps) {
   const project = projects.find((p) => p.id === id);
 
   if (!project) {
-    notFound(); // ৪০৪ পেজে নিয়ে যাবে যদি প্রজেক্ট আইডি না মেলে
+    notFound();
   }
 
   return (
@@ -54,7 +52,8 @@ export default async function ProjectDetailsPage({ params }: PageProps) {
 
         {/* Action Buttons & Overview */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 pt-6">
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-10">
+            {/* Description */}
             <div>
               <h2 className="text-2xl font-bold uppercase mb-4 text-brand-purple">Overview</h2>
               <p className="text-slate-300 text-lg leading-relaxed font-medium">
@@ -63,7 +62,7 @@ export default async function ProjectDetailsPage({ params }: PageProps) {
             </div>
 
             {/* Key Features */}
-            {project.features && (
+            {project.features && project.features.length > 0 && (
               <div className="space-y-4">
                 <h2 className="text-2xl font-bold uppercase text-brand-purple">Key Features</h2>
                 <ul className="space-y-3">
@@ -71,6 +70,42 @@ export default async function ProjectDetailsPage({ params }: PageProps) {
                     <li key={i} className="flex items-start gap-3 text-slate-300">
                       <CheckCircle2 size={20} className="text-brand-purple shrink-0 mt-1" />
                       <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Challenges Faced */}
+            {project.challenges && project.challenges.length > 0 && (
+              <div className="space-y-4 pt-4 border-t border-white/10">
+                <h2 className="text-2xl font-bold uppercase text-amber-400 flex items-center gap-2">
+                  <AlertTriangle size={24} />
+                  Challenges Faced
+                </h2>
+                <ul className="space-y-3">
+                  {project.challenges.map((challenge, i) => (
+                    <li key={i} className="flex items-start gap-3 text-slate-300">
+                      <span className="text-amber-400 font-bold text-lg">•</span>
+                      <span>{challenge}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Future Plans */}
+            {project.futurePlans && project.futurePlans.length > 0 && (
+              <div className="space-y-4 pt-4 border-t border-white/10">
+                <h2 className="text-2xl font-bold uppercase text-emerald-400 flex items-center gap-2">
+                  <Lightbulb size={24} />
+                  Potential Improvements & Future Plans
+                </h2>
+                <ul className="space-y-3">
+                  {project.futurePlans.map((plan, i) => (
+                    <li key={i} className="flex items-start gap-3 text-slate-300">
+                      <span className="text-emerald-400 font-bold text-lg">•</span>
+                      <span>{plan}</span>
                     </li>
                   ))}
                 </ul>
