@@ -181,37 +181,60 @@ export const projects: Project[] = [
 },
   {
     id: "keen-keeper",
-    title: "KeenKeeper: Personal Relationship Manager",
-    category: "Social CRM Platform • 2026",
+    title: "KeenKeeper — Personal Relationship Manager",
+    category: "Social CRM Platform",
     image: "/KeenKeeper.png",
-    description: "A personal social CRM tool to help manage personal network and relationship metrics effectively.",
+    description: "A personal social CRM application designed to systematically log, track, and maintain personal network interactions and relationship health metrics.",
     features: [
-      "Data visualization with Recharts",
-      "Custom analytics dashboard",
-      "Sleek UI components with DaisyUI"
+      "Interactive analytics dashboard featuring dynamic data visualization via Recharts",
+      "Categorized contact and relationship management with status tracking",
+      "Sleek and responsive user interface built using DaisyUI components"
     ],
-    tags: ["Next.js", "JavaScript (ES6+)", "DaisyUI", "Tailwind CSS", "Recharts"],
+    tags: [
+      "Next.js",
+      "JavaScript (ES6+)",
+      "DaisyUI",
+      "Tailwind CSS",
+      "Recharts"
+    ],
     liveLink: "https://effervescent-jalebi-e2c324.netlify.app",
-    githubLink: "https://github.com/Nishitasarker/Next-Js-Project"
-  },
-  {
-    id: "omni-desk",
-    title: "OmniDesk Tools",
-    category: "All-in-One Digital Tool Suite",
-    image: "/Digitools.png",
-    description: "A fast and lightweight web app offering multiple everyday digital conversion and utility tools.",
-    tags: ["React.js", "Vite", "Tailwind CSS", "DaisyUI", "JavaScript (ES6+)"],
-    liveLink: "https://fancy-tiramisu-290684.netlify.app",
-    githubLink: "https://github.com/Nishitasarker/Digitools-platform"
+    githubLink: "https://github.com/Nishitasarker/Next-Js-Project",
+    challenges: [
+      "Transforming qualitative relationship notes and logs into quantitative analytical chart data accurately.",
+      "Ensuring responsive layout flexibility across various chart widgets and dashboard elements."
+    ],
+    futurePlans: [
+      "Add automated email or browser reminder notifications for key dates and follow-ups.",
+      "Integrate contact import options from Google Contacts API."
+    ]
   },
   {
     id: "devflow-tracker",
-    title: "DevFlow Tracker",
+    title: "DevFlow Tracker — Developer Task Manager",
     category: "Project Management Tool",
     image: "/Github.png",
-    description: "A sleek task tracking application designed for developer workflow management.",
-    tags: ["HTML5 & CSS3", "Tailwind CSS", "JavaScript", "DaisyUI"],
+    description: "A lightweight task tracking application tailored for developer workflow management, focusing on DOM manipulation, JSON data handling, and dynamic state updates.",
+    features: [
+      "Real-time task addition, status updates, and history activity tracking",
+      "Dynamic DOM updating based on interactive JavaScript functions and JSON structure",
+      "Clean UI component styling using DaisyUI and Tailwind CSS utilities",
+      "User Login User Name: admin | Pass: admin123"
+    ],
+    tags: [
+      "HTML5 & CSS3",
+      "JavaScript (ES6+)",
+      "Tailwind CSS",
+      "DaisyUI"
+    ],
     liveLink: "https://nishitasarker.github.io/json-assignment/",
-    githubLink: "https://github.com/Nishitasarker/json-assignment"
+    githubLink: "https://github.com/Nishitasarker/json-assignment",
+    challenges: [
+      "Managing UI state changes dynamically using Vanilla JavaScript and DOM methods without front-end framework abstractions.",
+      "Maintaining structured task data flow and state consistency during user actions."
+    ],
+    futurePlans: [
+      "Implement localStorage retention so tasks persist between page refreshes.",
+      "Add drag-and-drop support for shifting tasks across Kanban-style status columns."
+    ]
   }
 ];

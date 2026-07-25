@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Variants } from 'framer-motion';
 import Link from "next/link";
 import { ArrowUp, Infinity as InfinityIcon } from "lucide-react"; 
-import { FaLinkedin, FaGithub, FaWhatsapp, FaEnvelope } from "react-icons/fa"; 
+import { FaLinkedin, FaGithub, FaWhatsapp, FaFacebook, FaEnvelope } from "react-icons/fa"; 
 import Magnetic from "@/components/animations/Magnetic";
 
 export default function Footer() {
@@ -26,6 +26,11 @@ export default function Footer() {
       label: "GitHub" 
     },
     { 
+      icon: <FaFacebook size={20} />, 
+      href: "https://www.facebook.com/puja.sarker.602565",
+      label: "Facebook" 
+    },
+    { 
       icon: <FaEnvelope size={20} />, 
       href: "mailto:nishitasarkerjui@gmail.com",
       label: "Email" 
@@ -37,21 +42,21 @@ export default function Footer() {
     },
   ];
 
-  // অ্যানিমেশন ভেরিয়েন্টস (কোনো টাইপ কাস্টিং বা ': any' ছাড়াই বিল্ড ফ্রেন্ডলি করা হয়েছে)
- const fadeInUp: Variants = {
-  hidden: { 
-    opacity: 0, 
-    y: 20 
-  },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      duration: 0.6, 
-      ease: [0.6, -0.05, 0.01, 0.99] // এখন TypeScript কোনো ঝামেলা করবে না
-    } 
-  }
-};
+  // অ্যানিমেশন ভেরিয়েন্টস
+  const fadeInUp: Variants = {
+    hidden: { 
+      opacity: 0, 
+      y: 20 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 0.6, 
+        ease: [0.6, -0.05, 0.01, 0.99]
+      } 
+    }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -64,25 +69,21 @@ export default function Footer() {
     }
   };
 
-  
-  const iconVariants: Variants = { // এখানে : Variants যোগ করুন
-  hidden: { scale: 0, opacity: 0 },
-  visible: { 
-    scale: 1, 
-    opacity: 1, 
-    transition: { 
-      type: "spring", // এখন TypeScript বুঝবে এটা নির্দিষ্ট spring অ্যানিমেশনই
-      stiffness: 260,
-      damping: 20
-    } 
-  }
-};
+  const iconVariants: Variants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: { 
+      scale: 1, 
+      opacity: 1, 
+      transition: { 
+        type: "spring",
+        stiffness: 260,
+        damping: 20
+      } 
+    }
+  };
 
   return (
-    // কাস্টমাইজেশন: bg-neutral-900 (প্রিমিয়াম গ্রে ব্যাকগ্রাউন্ড) এবং ম্যাচিং বর্ডার
     <footer className="py-20 px-6 md:px-12 lg:px-24 bg-neutral-900 border-t border-neutral-800 relative overflow-hidden">
-      
-      {/* কাস্টমাইজেশন: স্ক্রোল পজিশন এরর দূর করতে 'relative' ক্লাস যুক্ত করা হয়েছে */}
       <motion.div 
         className="max-w-7xl mx-auto relative" 
         initial="hidden"
@@ -103,7 +104,7 @@ export default function Footer() {
               <span className="text-3xl font-black tracking-tighter uppercase text-white">Nishi</span>
             </Link>
             <p className="text-gray-400 max-w-lg text-center md:text-left font-medium leading-relaxed">
-              Full-stack Developer | Data Analyst. Specialized in Next.js, React, and MongoDB, with a deep interest in statistical modeling and database management. Turning complex problems into elegant, data-driven solutions.
+              Full-Stack Web Developer specializing in Next.js, React, Node.js, Express.js, MongoDB, TypeScript, and JavaScript. I build fast, scalable, and visually interactive web applications with modern tools like Tailwind CSS and Framer Motion. Open to new opportunities and collaborations!
             </p>
           </motion.div>
 
@@ -113,7 +114,7 @@ export default function Footer() {
             variants={fadeInUp}
           >
             <motion.div 
-              className="flex gap-4"
+              className="flex gap-4 flex-wrap justify-center md:justify-end"
               variants={containerVariants}
             >
               {socialLinks.map((social, index) => (
@@ -124,7 +125,6 @@ export default function Footer() {
                       target={social.label !== "Email" ? "_blank" : "_self"}
                       rel="noopener noreferrer"
                       aria-label={social.label}
-                      // কাস্টমাইজেশন: আইকনগুলোর ব্যাকগ্রাউন্ড ডার্ক থিমের সাথে ম্যাচ করে গ্লাস-মর্ফিজম লুক দেওয়া হয়েছে
                       className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 shadow-xl backdrop-blur-sm transition-all text-gray-400 hover:text-white hover:bg-white/10 hover:border-white/20 hover:-translate-y-1 text-xl"
                     >
                       {social.icon}
@@ -155,14 +155,15 @@ export default function Footer() {
               <span>Back to Top</span>
               <div className="w-12 h-12 rounded-full border border-brand-purple/30 flex items-center justify-center group-hover:bg-brand-purple group-hover:border-brand-purple group-hover:text-white transition-all overflow-hidden">
                 <motion.div
-                   animate={{ y: [0, -4, 0] } as const} // <-- এখানেও as const দিন
-              transition={{  repeat: Infinity, 
-                       duration: 2, 
-                        ease: "easeInOut" 
-                          }}
->
-  <ArrowUp size={20} />
-</motion.div>
+                  animate={{ y: [0, -4, 0] } as const}
+                  transition={{ 
+                    repeat: Infinity, 
+                    duration: 2, 
+                    ease: "easeInOut" 
+                  }}
+                >
+                  <ArrowUp size={20} />
+                </motion.div>
               </div>
             </button>
           </Magnetic>
