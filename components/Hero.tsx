@@ -105,7 +105,7 @@ const Hero = () => {
             {/* Resume Download Button */}
             <div className="flex flex-wrap items-center gap-4">
               <motion.a
-                href="/resume.pdf"
+                href="/Nishita_Sarker_Jui_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
